@@ -1,0 +1,5 @@
+<launch>
+  <!-- 启动PP_car节点 -->
+  <node name="PP_car_node" pkg="control" type="PP_car" output="screen">
+  </node>
+</launch>
