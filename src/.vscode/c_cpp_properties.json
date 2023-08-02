@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/yeziheng/LIDAR_ye/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/yeziheng/LIDAR_ye/src/boundary_detector/include/**",
+                "/home/yeziheng/LIDAR_ye/src/lidar_cluster/include/**",
+                "/home/yeziheng/LIDAR_ye/src/linear_acc/include/**",
+                "/home/yeziheng/LIDAR_ye/src/nodelet_test/include/**",
+                "/home/yeziheng/LIDAR_ye/src/skidpad_detection/include/**",
+                "/home/yeziheng/LIDAR_ye/src/topic_sub_test/include/**",
+                "/usr/include/**",
+                "${workspaceFolder}/skidpad_detection/include",
+                "${workspaceFolder}/lidar_cluster/include"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

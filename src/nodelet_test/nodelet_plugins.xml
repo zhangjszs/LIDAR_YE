@@ -1,0 +1,7 @@
+<library path="lib/libnodelet_test">nav_msgs
+	<class name="lidar_cluster/SampleNodelet" type="lidar_cluster::SampleNodelet" base_class_type="nodelet::Nodelet">
+		<description>
+			This is my test nodelet
+		</description>
+	</class>
+</library>

@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="nodelet" type="nodelet" name="lidar_cluster_nodelet_manager"  args="manager" output="screen"/>
+     <include file="$(find lidar_camera_sync)/launch/lidar_camera_sync.launch"/>
+     <include file="$(find multi_sensor_fusion)/launch/multi_sensor_fusion.launch"/>
+</launch>

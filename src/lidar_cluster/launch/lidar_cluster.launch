@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="nodelet" type="nodelet" name="lidar_cluster_nodelet_manager"  args="manager" output="screen"/>
+    <node pkg="nodelet" type="nodelet" name="lidar_cluster_node" args="load nodelet_lidar/Lidar_Cluster_Nodelet lidar_cluster_nodelet_manager" output="screen">
+    <rosparam command="load" file="$(find lidar_cluster)/config/lidar_cluster.yaml" />
+    </node>
+    <!-- <include file="$(find linear_acc)/launch/linear_acc.launch"/>-->
+    <!-- <include file="$(find multi_sensor_fusion)/launch/multi_sensor_fusion.launch"/> -->
+</launch>

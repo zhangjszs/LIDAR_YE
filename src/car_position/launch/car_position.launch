@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="car_position" type="car_position" name="car_position" output="screen">
+  
+  </node>
+  
+</launch>

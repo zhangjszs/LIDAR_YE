@@ -1,0 +1,7 @@
+<library path="lib/liblinear_acc">
+	<class name="linear_acc/Linear_Acc_Nodelet" type="linear_acc::Linear_Acc_Nodelet" base_class_type="nodelet::Nodelet">
+		<description>
+			linear_acc_nodelet
+		</description>
+	</class>
+</library>

@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="nodelet" type="nodelet" name="linear_acc_noder" args="load linear_acc/Linear_Acc_Nodelet lidar_cluster_nodelet_manager" output="screen">
+    <rosparam command="load" file="$(find linear_acc)/config/linear_acc.yaml" />
+    </node>
+</launch>

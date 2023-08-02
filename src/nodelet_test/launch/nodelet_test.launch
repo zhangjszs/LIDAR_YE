@@ -1,0 +1,8 @@
+<launch>
+	<node pkg="nodelet" type="nodelet" name="manager_1" args="manager" output="screen"/>
+	<node pkg="nodelet" type="nodelet" name="Node_1" args="load lidar_cluster/SampleNodelet manager_1" output="screen">
+		<remap from="Node_1/in" to="foo"/>
+	</node>
+	<node pkg="nodelet" type="nodelet" name="Node_2" args="load lidar_cluster/SampleNodelet manager_1" output="screen"/>
+	<node pkg="nodelet" type="nodelet" name="Node_3" args="load lidar_cluster/SampleNodelet manager_1" output="screen"/>
+</launch>
