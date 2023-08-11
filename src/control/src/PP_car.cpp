@@ -6,9 +6,6 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <sstream>
-#include <iostream>
-#include <ios>
 #include <iterator>
 #include <string.h>
 #include <std_msgs/MultiArrayLayout.h>
@@ -21,22 +18,16 @@
 #include "geometry_msgs/Point.h"
 #include "huat_msgs/HAUT_PathLimits.h"
 #include "huat_msgs/HUAT_VehcileCmd.h"
-#include <nav_msgs/Path.h>
-#include <geometry_msgs/PoseStamped.h>
-#include <kdtree++/kdtree.hpp>
 using namespace std;
 
 #define l 1.55;
 #define zhongxin 0.8525
 #define pi 3.141592653589779
-#define g 9.8
-#define MINNUM 0.0000000001
 double enu_xyz[3];
-double first_lat = 32.65343529999999816482;
-double first_lon = 110.72996019999999361971;
-double first_alt = 292.16100000000000136424;
+// double first_lat = 32.65343529999999816482;
+// double first_lon = 110.72996019999999361971;
+// double first_alt = 292.16100000000000136424;
 
-huat_msgs::HUAT_ASENSING car_location;
 float lookahead = 2.5; // 前视距离
 int num_steps = 5;
 double dt = 0.01;
@@ -45,13 +36,6 @@ float current_speed, long_error, long_current, sum_error;
 vector<double> ghe;
 vector<double> refx;
 vector<double> refy;
-std::vector<std::vector<double>> points;
-
-struct Point
-{
-    double x;
-    double y;
-};
 
 class PPControl
 {
@@ -64,242 +48,167 @@ public:
         my_pedal_ratio = 0;
         my_gear_position = 0;
         my_working_mode = 0;
+
         my_racing_num = 0;
         my_racing_status = 0;
         my_checksum = 100;
 
-        pub_cmd = nh.advertise<huat_msgs::HUAT_ControlCommand>("my_topic", 1);
+        pub_cmd = nh.advertise<huat_msgs::HUAT_ControlCommand>("my_topic", 10);
         pub_finall_cmd = nh.advertise<huat_msgs::HUAT_VehcileCmd>("finall_cad", 100);
-        path_pub = nh.advertise<nav_msgs::Path>("path", 1);
-        sub = nh.subscribe("/INS/ASENSING_INS", 100, &PPControl::posecallback, this);                         // 回调函数在此只是一个声明，只有遇到ros::spin()或ros::spinOnce()才开始处理被调用的数据
+        sub = nh.subscribe("/Carstate", 10, &PPControl::posecallback, this);                                  // 回调函数在此只是一个声明，只有遇到ros::spin()或ros::spinOnce()才开始处理被调用的数据
         sub_path = nh.subscribe("/skidpad_detection_node/log_path", 100, &PPControl::locationcallback, this); // 订阅轨迹信息
-        sub_cmd = nh.subscribe("my_topic", 100, &PPControl::anglecallback, this);
-        pose_sub_ = nh.subscribe("/Carstate", 1000, &PPControl::positionback, this);
+        sub_cmd = nh.subscribe("my_topic", 10, &PPControl::anglecallback, this);
     }
 
 public:
-    void GeoDetic_TO_ENU(double lat, double lon, double h, double lat0, double lon0, double h0, double enu_xyz[3])
+    // void GeoDetic_TO_ENU(double lat, double lon, double h, double lat0, double lon0, double h0, double enu_xyz[3])
+    // {
+    // double a, b, f, e_sq;
+    //  a = 6378137;
+    //  b = 6356752.3142;
+    // f = (a - b) / a;e_sq = f * (2 - f);
+    // // 站点（非原点）
+    // double lamb, phi, s, N, sin_lambda, cos_lambda, sin_phi, cos_phi, x, y, z;
+    // lamb = lat;
+    // phi = lon;
+    // s = sin(lamb);
+    // N = a / sqrt(1 - e_sq * s * s);
+
+    // sin_lambda = sin(lamb);
+    // cos_lambda = cos(lamb);
+    // sin_phi = sin(phi);
+    // cos_phi = cos(phi);
+
+    // x = (h + N) * cos_lambda * cos_phi;
+    // y = (h + N) * cos_lambda * sin_phi;
+    // z = (h + (1 - e_sq) * N) * sin_lambda;
+    // // 原点坐标转换
+    // double lamb0, phi0, s0, N0, sin_lambda0, cos_lambda0, sin_phi0, cos_phi0, x0, y0, z0;
+    // lamb0 = lat0;
+    // phi0 = lon0;
+    // s0 = sin(lamb0);
+    // N0 = a / sqrt(1 - e_sq * s0 * s0);
+
+    // sin_lambda0 = sin(lamb0);
+    // cos_lambda0 = cos(lamb0);
+    // sin_phi0 = sin(phi0);
+    // cos_phi0 = cos(phi0);
+
+    // x0 = (h0 + N0) * cos_lambda0 * cos_phi0;
+    // y0 = (h0 + N0) * cos_lambda0 * sin_phi0;
+    // z0 = (h0 + (1 - e_sq) * N0) * sin_lambda0;
+    // // ECEF 转 ENU
+    // double xd, yd, zd, t;
+    // xd = x - x0;
+    // yd = y - y0;
+    // zd = z - z0;
+    // t = -cos_phi0 * xd - sin_phi0 * yd;
+
+    // enu_xyz[0] = -sin_phi0 * xd + cos_phi0 * yd;
+    // enu_xyz[1] = t * sin_lambda0 + cos_lambda0 * zd;
+    // enu_xyz[2] = cos_lambda0 * cos_phi0 * xd + cos_lambda0 * sin_phi0 * yd + sin_lambda0 * zd;
+
+    // gx = enu_xyz[0];     //这里的gxgygz是惯导得到的实时的，
+    // gy = enu_xyz[1];
+    // gz = enu_xyz[2];
+    // cout<<"gx=" << gx << " gy= " << gy << endl;
+    // }
+    void posecallback(const huat_msgs::HUAT_CarState::ConstPtr &msgs)
     {
-        // 定义一些常量，表示参考椭球体的参数
-        double a, b, f, e_sq;
-        a = 6378137;        // 长半轴，单位为米
-        b = 6356752.3142;   // 短半轴，单位为米
-        f = (a - b) / a;    // 扁率
-        e_sq = f * (2 - f); // 第一偏心率平方
-
-        // 计算站点（非原点）的ECEF坐标（地心地固坐标系）
-        double lamb, phi, s, N, sin_lambda, cos_lambda, sin_phi, cos_phi, x, y, z;
-        lamb = lat;                     // 纬度，单位为度
-        phi = lon;                      // 经度，单位为度
-        s = sin(lamb);                  // 纬度的正弦值
-        N = a / sqrt(1 - e_sq * s * s); // 卯酉圈曲率半径
-
-        sin_lambda = sin(lamb); // 纬度的正弦值
-        cos_lambda = cos(lamb); // 纬度的余弦值
-        sin_phi = sin(phi);     // 经度的正弦值
-        cos_phi = cos(phi);     // 经度的余弦值
-
-        x = (h + N) * cos_lambda * cos_phi;    // x坐标，单位为米
-        y = (h + N) * cos_lambda * sin_phi;    // y坐标，单位为米
-        z = (h + (1 - e_sq) * N) * sin_lambda; // z坐标，单位为米
-
-        // 计算原点的ECEF坐标（地心地固坐标系）
-        double lamb0, phi0, s0, N0, sin_lambda0, cos_lambda0, sin_phi0, cos_phi0, x0, y0, z0;
-        lamb0 = lat0;                      // 原点的纬度，单位为度
-        phi0 = lon0;                       // 原点的经度，单位为度
-        s0 = sin(lamb0);                   // 原点纬度的正弦值
-        N0 = a / sqrt(1 - e_sq * s0 * s0); // 原点卯酉圈曲率半径
-
-        sin_lambda0 = sin(lamb0); // 原点纬度的正弦值
-        cos_lambda0 = cos(lamb0); // 原点纬度的余弦值
-        sin_phi0 = sin(phi0);     // 原点经度的正弦值
-        cos_phi0 = cos(phi0);     // 原点经度的余弦值
-
-        x0 = (h0 + N0) * cos_lambda0 * cos_phi0;   // 原点x坐标，单位为米
-        y0 = (h0 + N0) * cos_lambda0 * sin_phi0;   // 原点y坐标，单位为米
-        z0 = (h0 + (1 - e_sq) * N0) * sin_lambda0; // 原点z坐标，单位为米
-
-        // 计算站点相对于原点的ECEF坐标差
-        double xd, yd, zd, t;
-        xd = x - x0;
-        yd = y - y0;
-        zd = z - z0;
-
-        // 计算站点的ENU坐标（本地东北天坐标系）
-        t = -cos_phi0 * xd - sin_phi0 * yd;
-
-        enu_xyz[0] = -sin_phi0 * xd + cos_phi0 * yd;                                               // 东方向坐标，单位为米
-        enu_xyz[1] = t * sin_lambda0 + cos_lambda0 * zd;                                           // 北方向坐标，单位为米
-        enu_xyz[2] = cos_lambda0 * cos_phi0 * xd + cos_lambda0 * sin_phi0 * yd + sin_lambda0 * zd; // 天空方向坐标，单位为米
-
-        // 将计算得到的ENU坐标存储在全局变量gx、gy和gz中
-        gx = enu_xyz[0]; // 东方向坐标，单位为米
-        gy = enu_xyz[1]; // 北方向坐标，单位为米
-        gz = enu_xyz[2]; // 天空方向坐标，单位为米
-        cout << "gx=" << gx << " gy=" << gy << " gz=" << gz << endl;
-    }
-
-    void positionback(const huat_msgs::HUAT_CarState::ConstPtr &carposition)
-    {
-        // 提取位置信息
-        gx = carposition->car_state.x;
-        gy = carposition->car_state.y;
-        ljyheading = carposition->car_state.theta;
-        cout << "gx=" << gx << " gy=" << gy << endl;
-    }
-
-    void posecallback(const huat_msgs::HUAT_ASENSING::ConstPtr &msgs)
-    {
-        // 将消息中的速度信息赋值给car_location结构体中对应的成员变量
-        car_location.east_velocity = msgs->east_velocity;
-        car_location.north_velocity = msgs->north_velocity;
-        car_location.ground_velocity = msgs->ground_velocity;
-        /*double first_lat = msgs->latitude;
-        double first_lon = msgs->longitude;
-        double first_alt = msgs->altitude;
-
-        double first_lat = 32.65343529999999816482;
-        double first_lon = 110.72996019999999361971;
-        double first_alt = 292.16100000000000136424;*/
-
-        // 将方位角（azimuth）从角度转换为弧度，并存储到变量heading0中
-        double heading0 = (msgs->azimuth) * pi / 180; // 弧度转换成角度
-        double heading1 = (heading0 > pi) ? (heading0 - 2 * pi) : (heading0 < -pi) ? (heading0 + 2 * pi)
-                                                                                   : heading0;
-        // 将heading0的值限制在 -π 到 π 之间，以确保方位角的范围在正常的数值范围内
-        // 并将结果赋值给PPControl类的静态成员变量heading
-        if (heading1 > 0)
-        {
-            heading1 -= pi;
-        }
-        else
-        {
-            heading1 += pi;
-        }
-        PPControl::heading = heading1;
-        // PPControl::heading = ljyheading;
-        // 将原始的方位角（azimuth）值存入名为ghe的容器中，可能用于后续处理或调试
-        ghe.push_back(msgs->azimuth);
-
-        // 将经度（longitude）、纬度（latitude）、高度（altitude）转换为ENU局部坐标系中的坐标
-        /*GeoDetic_TO_ENU((msgs->latitude) * pi / 180, (msgs->longitude) * pi / 180, msgs->altitude,
-                        first_lat * pi / 180, first_lon * pi / 180, first_alt, &enu_xyz[0]);*/
-
-        // 输出转换后的方位角值heading0，方便在控制台上进行调试或观察
-        // cout << "first_lat=" << first_lat << " first_lon=" << first_lon << " first_alt=" << first_alt << endl;
-        // cout << "heading1= " << heading1 << " heading0= " << heading0 << " heading= " << heading << endl;
-
-        //SaveHeading(heading0, heading, ljyheading);
+        gx = msgs->car_state.x;
+        gy = msgs->car_state.y;
+        current_speed = msgs->V;
+        heading = -(msgs->car_state.theta);
+        cout << "gx=" << gx << endl;
+        cout << "gy=" << gy << endl;
+        cout << "heading = " << heading << endl;
+        // SaveCarPosition(gx, gy);
+        // SaveHeading(heading);
     }
 
     void locationcallback(const nav_msgs::Path::ConstPtr &msgs)
     {
-
-        // ofstream outfile;
-        // outfile.open("/home/zhangjszs/Pure_Pursuit/src/control/src/refx&refy.txt", ios::out | ios::app);
-
-        nav_msgs::Path path_msg;
-        path_msg.header.frame_id = "velodyne"; // Set the frame ID
+        refx.clear();
+        refy.clear();
         for (const auto &pose : msgs->poses)
         {
             double x = pose.pose.position.x;
             double y = pose.pose.position.y;
-
-            double transformed_x = x * cos(heading) - y * sin(heading);
-            double transformed_y = x * sin(heading) + y * cos(heading);
-
-            // double transformed_x = x;
-            // double transformed_y = y;
-
-            refx.push_back(transformed_x);
-            refy.push_back(transformed_y);
-
-            // points.push_back({transformed_x, transformed_y});
-
-            // cout << "refx=" << transformed_x << endl;
-            // cout << "refy=" << transformed_y << endl;
-            // outfile << "refx=" << transformed_x << " refy=" << transformed_y << endl; // 以追加的方式写入文件
-            geometry_msgs::PoseStamped pose_stamped;
-            pose_stamped.header.stamp = ros::Time::now();
-            pose_stamped.header.frame_id = "velodyne";
-            pose_stamped.pose.position.x = transformed_x;
-            pose_stamped.pose.position.y = transformed_y;
-            path_msg.poses.push_back(pose_stamped);
+            refx.push_back(x);
+            refy.push_back(y);
         }
-        path_pub.publish(path_msg);
-        // outfile.close();
     }
 
-    unsigned int get_goal_idx()
-    {
+    // refx.push_back(msgs->path.front().x);
+    // refy.push_back(msgs->path.front().y);
+    // cout << "refx=" << refx.back() <<endl;
+    // cout << "refy=" << refy.back() <<endl;
 
-        std::vector<double> distances;
-        distances.reserve(refx.size());
-        // float sqrtdistances = 0.0;
-        for (unsigned int i = 0; i < refx.size(); i++)
+    int get_goal_idx()
+    {                                                        // 这里是寻找距离后轮中心最近的点
+        double min_distance = numeric_limits<double>::max(); // 初始化为一个较大的值
+        int idx = -1;                                        // 初始化为无效索引
+
+        for (int i = 0; i < refx.size(); i++)
         {
-            double dx = refx[i] - gx;
-            double dy = refy[i] - gy;
-            if (dx <= MINNUM && dy <= MINNUM)
+            double distance = pow(gx - refx[i], 2) + pow(gy - refy[i], 2);
+
+            if (distance < min_distance) 
             {
-                flag = true;
+                min_distance = distance;
+                idx = i;
             }
-            double sqrtdistances = dx * dx + dy * dy;
-            double Angle = atan2(dy, dx);
-            if (Angle <= 0 || Angle > 3.1415)
-            {
-                sqrtdistances = 100000;
-            }
-            distances.push_back(sqrtdistances);
         }
-        auto min_itr = std::min_element(distances.begin(), distances.end());
-        unsigned int idx = std::distance(distances.begin(), min_itr);
-        // cout << "gx=" << gx << " gy=" << gy << endl;
-        // cout << "refx=" << refx[idx] << " refy=" << refy[idx] << endl;
-        if (flag)
-        {
-            idx++;
-            flag = false;
-        }
-        last_index = idx;
+        // if (idx >= 0 && idx < refx.size())
+        //     cout << "refx = " << refx[idx] << "refy =" << refy[idx] << endl;
         return idx;
     }
-    // unsigned int get_goal_idx()
-    // {
-    //     typedef KDTree::KDTree<2, std::vector<double>> KDTreeType;
-    //     KDTreeType kdtree(points.begin(), points.end());
-    //     std::vector<double> targetPoint = {gx, gy};
+    // 接下来寻找经过前视距离ld0后的最接近的点
+    int get_lookahead_indices(int current_idx, double lookahead, const vector<double> &refx, const vector<double> &refy)
+    {
+        double distance_sum = 0.0;
+        int idx = current_idx;
 
-    //     auto nearestNeighbor = kdtree.find_nearest(targetPoint);
-    //     size_t idx = std::distance(kdtree.begin(), nearestNeighbor.first);
-    //     return idx;
-    // }
+        while (distance_sum < lookahead && idx < refx.size() - 1)
+        {
+            double dx = refx[idx + 1] - refx[idx];
+            double dy = refy[idx + 1] - refy[idx];
+            double distance = sqrt(dx * dx + dy * dy);
+
+            if (distance_sum + distance <= lookahead)
+            {
+                distance_sum += distance;
+                idx++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if (idx >= 0 && idx < refx.size())
+            cout << "追踪的点：refx_f = " << refx[idx] << " refy_r  =" << refy[idx] << endl;
+        return idx;
+    }
 
     void controlcommand(huat_msgs::HUAT_ControlCommand &cmd)
     {
         float delta_max = 0.4;
         int goal_idx = get_goal_idx();
-
-        // SaveGoal_idx(goal_idx, refx, refy);
-
-        if (goal_idx >= 0 && goal_idx < (int)refx.size() && goal_idx < (int)refy.size())
+        int lookhead_idx = get_lookahead_indices(goal_idx, lookahead, refx, refy);
+        // SaveGoal_idx(lookhead_idx, refx, refy);
+        if (goal_idx >= 0 && goal_idx < refx.size() && goal_idx < refy.size())
         {
-            //float zhuanxiang = atan2(refx[goal_idx] - gx, refy[goal_idx] - gy);
-            float zhuanxiang = atan2(refy[goal_idx] - gy, refx[goal_idx] - gx);
-            float alpha = zhuanxiang - heading;
+            float alpha = atan2(refy[lookhead_idx] - gy, refx[lookhead_idx] - gx) - heading;
             alpha = (alpha > pi) ? (alpha - 2 * pi) : (alpha < -pi) ? (alpha + 2 * pi)
                                                                     : alpha;
-            cout << "alpha2=" << alpha << endl;
 
-            // SaveAlpha( refx[goal_idx],  refy[goal_idx],  gx,  gy,  zhuanxiang,  alpha);
-
-            //float delta = atan2(2 * sin(alpha), lookahead);
-            float delta = atan(2 * 1.87 *  sin(alpha) / lookahead);
+            float delta = atan2(3.1 * sin(alpha), lookahead);
             delta = max(min(delta_max, delta), -delta_max);
             cmd.steering_angle.data = delta;
+            // SaveAlpha( refx[goal_idx],  refy[goal_idx],  gx,  gy,  alpha,  delta);
+            cout << "delta = " << delta << endl;
 
-            current_speed = sqrt(pow(car_location.east_velocity, 2) + pow(car_location.north_velocity, 2) + pow(car_location.ground_velocity, 2));
-            cout << "current_speed is: " << current_speed;
+            cout << "current_speed is: " << current_speed << endl;
 
             long_error = 4.0 - current_speed;
             sum_error += long_error;
@@ -322,14 +231,14 @@ public:
             cout << "cmd.throttle.data = " << cmd.throttle.data;
             pub_cmd.publish(cmd);
 
-            if (goal_idx >= (int)(refx.size() - 1))
+            if (goal_idx >= refx.size() - 1)
             {
                 cmd.steering_angle.data = 0;
                 cmd.throttle.data = 0;
                 cmd.racing_status = 4;
                 pub_cmd.publish(cmd);
                 cout << "已经到达离线轨迹的最后一个点，停止跟踪！" << endl;
-                ros::shutdown();
+                // ros::shutdown();
             }
         }
         else
@@ -337,7 +246,16 @@ public:
             cout << "得不到有效的惯导路径信息" << endl;
         }
     }
+    void anglecallback(const huat_msgs::HUAT_ControlCommand::ConstPtr &msgs)
+    {
 
+        my_steering = int(msgs->steering_angle.data * 180 / 3.14159265358979 * 3.73) + 110; // 这里的角度数加了110  他这里110才是中心
+        cout << "my_steering " << my_steering << endl;                                      // 转角
+
+        my_pedal_ratio = int(msgs->throttle.data); // 踏板率
+        cout << "my_pedal_ratio " << my_pedal_ratio << endl;
+        // SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
+    }
     void vehcile_finall_cmd(huat_msgs::HUAT_VehcileCmd &finall_cmd)
     {
         cout << "read!" << endl;
@@ -384,31 +302,18 @@ public:
         }
     }
 
-    void anglecallback(const huat_msgs::HUAT_ControlCommand::ConstPtr &msgs)
-    {
-
-        my_steering = int(msgs->steering_angle.data * 180 / 3.14159265358979 * 3.73) + 110; // 这里的角度数加了110  他这里110才是中心
-        cout << "steering " << msgs->steering_angle.data << endl;                           // 没有转换的转角
-        cout << "my_steering " << my_steering << endl;                                      // 转角
-
-        my_pedal_ratio = int(msgs->throttle.data); // 踏板率
-        cout << "my_pedal_ratio " << my_pedal_ratio << endl;
-
-        // SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
-    }
-
-    void SaveHeading(double heading0, double heading, double ljyheading)
+    void SaveHeading(double heading0)
     {
         ofstream outfile1;
-        outfile1.open("/home/zhangjszs/Pure_Pursuit/src/control/src/heading.txt", ios::out | ios::app);
-        outfile1 << " heading0= " << heading0 << " heading= " << heading << " ljyheading= " << ljyheading << endl; // 以追加的方式写入文件
+        outfile1.open("/home/zhangjszs/LIDAR_ye/src/control/src/heading.txt", ios::out | ios::app);
+        outfile1 << "heading " << heading0 << endl; // 以追加的方式写入文件
         outfile1.close();
     }
 
     void SaveSteering(double steering_angle, int my_steering, int my_pedal_ratio)
     {
         ofstream outfile2;
-        outfile2.open("/home/zhangjszs/Pure_Pursuit/src/control/src/steering.txt", ios::out | ios::app);
+        outfile2.open("/home/zhangjszs/LIDAR_ye/src/control/src/steering.txt", ios::out | ios::app);
         // outfile2 << "steering " << msgs->steering_angle.data << " my_steering " << my_steering << " my_pedal_ratio " << my_pedal_ratio << endl; // 以追加的方式写入文件
         outfile2 << steering_angle << " " << my_steering << " " << my_pedal_ratio << endl; // 以追加的方式写入文件
         outfile2.close();
@@ -417,40 +322,44 @@ public:
     void SaveGoal_idx(auto goal_idx, auto refx, auto refy)
     {
         ofstream outfile3;
-        outfile3.open("/home/zhangjszs/Pure_Pursuit/src/control/src/goal_idx.txt", ios::out | ios::app);
+        outfile3.open("/home/zhangjszs/LIDAR_ye/src/control/src/goal_idx.txt", ios::out | ios::app);
         outfile3 << "goal_idx=" << goal_idx << " refx=" << refx[goal_idx] << " refy=" << refy[goal_idx] << endl; // 以追加的方式写入文件
         outfile3.close();
     }
 
-    void SaveAlpha(double refx, double refy, double gx, double gy, double zhuanxiang, double alpha)
+    void SaveAlpha(double refx, double refy, double gx, double gy, double zhuanxiang, double delta)
     {
         ofstream outfile4;
-        outfile4.open("/home/zhangjszs/Pure_Pursuit/src/control/src/alpha.txt", ios::out | ios::app);
-        outfile4 << "refx[goal_idx]=" << refx << " refy[goal_idx]=" << refy << endl; // 以追加的方式写入文件
-        outfile4 << "gx=" << gx << " gy=" << gy << endl;
-        outfile4 << "偏转向量=" << zhuanxiang << endl;
-        outfile4 << "refx[goal_idx] - gx=" << refx - gx << " refy[goal_idx] - gy=" << refy - gy << endl;
-        outfile4 << "alpha1=" << alpha << endl;
-        outfile4 << "heading=" << heading << endl;
-        outfile4 << "alpha2=" << alpha << endl;
+        outfile4.open("/home/zhangjszs/LIDAR_ye/src/control/src/alpha.txt", ios::out | ios::app);
+        outfile4 << "跟踪点 refx[goal_idx] = " << refx << " refy[goal_idx] = " << refy << endl; // 以追加的方式写入文件
+        outfile4 << "车身位置 gx = " << gx << " gy = " << gy << endl;
+        outfile4 << "atan2(y,x) = " << zhuanxiang * 180 / 3.14 << endl; 
+        outfile4 << "delta = " << (delta * 180 / 3.14159265358979 * 3.73) + 110 << endl;
         outfile4.close();
+    }
+    void SaveCarPosition(double gx, double gy)
+    {
+        ofstream outfile5;
+        outfile5.open("/home/zhangjszs/LIDAR_ye/src/control/src/CarPosition.txt", ios::out | ios::app);
+        outfile5 << "gx = " << gx << " gy = " << gy << endl;
+        outfile5.close();
     }
 
 private:
     ros::NodeHandle nh;
-    ros::Subscriber sub, sub_path, sub_cmd, pose_sub_;
-    ros::Publisher pub_cmd, pub_finall_cmd, path_pub;
+    ros::Subscriber sub, sub_path, sub_cmd;
+    ros::Publisher pub_cmd, pub_finall_cmd;
     double heading, gx, gy, gz;
     huat_msgs::HUAT_VehcileCmd vehcile_cmd;
     huat_msgs::HUAT_ControlCommand state;
-    huat_msgs::HUAT_CarState Carstate;
     // 速度  刹车力 踏板比例 齿轮位置 工作模式 比赛号码 赛车状态
     int my_steering, my_brake_force, my_pedal_ratio, my_gear_position, my_working_mode, my_racing_num, my_racing_status;
-    long my_checksum; // 检查数
-    int last_index;
-    bool flag; // 判断是否需要下一个路径坐标点
-    double ljyheading;
+    long my_checksum;   // 检查数
     int input_mode = 3; // 输入模式 分为1 2 3 4测试，直线，八字，高速
+    double first_lat = 0;
+    double first_lon = 0;
+    double first_alt = 0;
+    bool imuflag = true;
 };
 
 int main(int argc, char **argv)

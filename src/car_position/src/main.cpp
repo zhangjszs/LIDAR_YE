@@ -13,6 +13,7 @@ int main(int argc ,char* argv[]){
      CarState car(nh);
     ros::Rate rate(10);
      while (ros::ok()){  
+
         ros::spinOnce();  
         rate.sleep();
      }

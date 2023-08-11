@@ -6,4 +6,5 @@ sensor_msgs/PointCloud2[] pc
 sensor_msgs/PointCloud2 pc_whole
 
 float32[] obj_dist
+float32[] confidence
 std_msgs/String color           # color of cone, 'b' = blue, 'y' = yellow, 'r' = red 'n'=None

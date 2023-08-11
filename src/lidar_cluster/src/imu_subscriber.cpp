@@ -1,53 +1,62 @@
 #include <imu_subscriber.hpp>
-IMUSubscriber::IMUSubscriber(ros::NodeHandle nh,std::string topic_name, size_t buff_size):nh_(nh){
+IMUSubscriber::IMUSubscriber(ros::NodeHandle nh, std::string topic_name, size_t buff_size) : nh_(nh)
+{
     subscriber_ = nh_.subscribe(topic_name, buff_size, &IMUSubscriber::msg_callback, this);
 }
-void IMUSubscriber::msg_callback(const common_msgs::ins_p2ConstPtr imu_msg_ptr){
-        IMUData imu_data;
-        mtx.lock();
-        imu_data.time = imu_msg_ptr->header.stamp.toSec();
-        imu_data.linear_acceleration.x = imu_msg_ptr->Vn;
-        imu_data.linear_acceleration.y = imu_msg_ptr->Ve;
-        imu_data.linear_acceleration.z = imu_msg_ptr->Vu;
-        imu_data.angular_velocity.x = imu_msg_ptr->gyro_x;
-        imu_data.angular_velocity.y = imu_msg_ptr->gyro_y;
-        imu_data.angular_velocity.z = imu_msg_ptr->gyro_z;
-        imu_data.rpy.heading = imu_msg_ptr->Heading;
-        imu_data.rpy.pitch = imu_msg_ptr->Pitch;
-        // std::cout<<imu_msg_ptr->Heading<<" "<<imu_msg_ptr->Pitch<<std::endl;
-        new_imu_data_.push_back(imu_data);
-        mtx.unlock();
-        // new_imu_data_.pop_front();
-        // std::cout<<"linear_acceleration:"<<"("<<imu_data.linear_acceleration.x<<","<<imu_data.linear_acceleration.y<<","<<imu_data.linear_acceleration.z<<")"<<std::endl;
-        // std::cout<<"angular_velocity:"<<"("<<imu_data.angular_velocity.x<<","<<imu_data.angular_velocity.y<<","<<imu_data.angular_velocity.z<<")"<<std::endl<<std::endl;
+
+void IMUSubscriber::msg_callback(const common_msgs::ins_p2ConstPtr imu_msg_ptr)
+{
+    IMUData imu_data;
+    mtx.lock();
+    imu_data.time = imu_msg_ptr->header.stamp.toSec();
+    imu_data.linear_acceleration.x = imu_msg_ptr->Vn;
+    imu_data.linear_acceleration.y = imu_msg_ptr->Ve;
+    imu_data.linear_acceleration.z = imu_msg_ptr->Vu;
+    imu_data.angular_velocity.x = imu_msg_ptr->gyro_x;
+    imu_data.angular_velocity.y = imu_msg_ptr->gyro_y;
+    imu_data.angular_velocity.z = imu_msg_ptr->gyro_z;
+    imu_data.rpy.heading = imu_msg_ptr->Heading;
+    imu_data.rpy.pitch = imu_msg_ptr->Pitch;
+    // std::cout<<imu_msg_ptr->Heading<<" "<<imu_msg_ptr->Pitch<<std::endl;
+    new_imu_data_.push_back(imu_data);
+    mtx.unlock();
+    // new_imu_data_.pop_front();
+    // std::cout<<"linear_acceleration:"<<"("<<imu_data.linear_acceleration.x<<","<<imu_data.linear_acceleration.y<<","<<imu_data.linear_acceleration.z<<")"<<std::endl;
+    // std::cout<<"angular_velocity:"<<"("<<imu_data.angular_velocity.x<<","<<imu_data.angular_velocity.y<<","<<imu_data.angular_velocity.z<<")"<<std::endl<<std::endl;
 }
 
-void IMUSubscriber::ParseData(std::deque<IMUData>& imu_data_buff) {
-        mtx.lock();
-        if (new_imu_data_.size() > 0) {
+void IMUSubscriber::ParseData(std::deque<IMUData> &imu_data_buff)
+{
+    mtx.lock();
+    if (new_imu_data_.size() > 0)
+    {
         imu_data_buff.insert(imu_data_buff.end(), new_imu_data_.begin(), new_imu_data_.end());
         // std::cout<<"size: "<<new_imu_data_.size()<<"   "<<imu_data_buff.size()<<std::endl;
         new_imu_data_.clear();
-        }
-        mtx.unlock();
+    }
+    mtx.unlock();
 }
 
-
-bool IMUSubscriber::SyncData(std::deque<IMUData>& UnsyncedData, IMUData& synced_data, double sync_time){
+bool IMUSubscriber::SyncData(std::deque<IMUData> &UnsyncedData, IMUData &synced_data, double sync_time)
+{
     IMUData tmp_imu_data;
-    while (UnsyncedData.size() >= 2) {
-        if (UnsyncedData.front().time > sync_time) 
+    while (UnsyncedData.size() >= 2)
+    {
+        if (UnsyncedData.front().time > sync_time)
             return false;
-        if (UnsyncedData.at(1).time < sync_time) {
+        if (UnsyncedData.at(1).time < sync_time)
+        {
             UnsyncedData.pop_front();
             continue;
         }
-        if (sync_time - UnsyncedData.front().time > 0.2) {
+        if (sync_time - UnsyncedData.front().time > 0.2)
+        {
             UnsyncedData.pop_front();
             break;
         }
-        
-        if (UnsyncedData.at(1).time - sync_time > 0.2) {
+
+        if (UnsyncedData.at(1).time - sync_time > 0.2)
+        {
             UnsyncedData.pop_front();
             break;
         }

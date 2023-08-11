@@ -9,7 +9,6 @@ CarState::CarState(ros::NodeHandle &nh_){
     INSpub =  nh.advertise<common_msgs::HUAT_Carstate>("/Carstate", 10);
 }
 
-
 void CarState::GeoDetic_TO_ENU(double lat, double lon, double h, double lat0, double lon0, double h0, double enu_xyz[3])
 {
     // 定义一些常量，表示参考椭球体的参数
@@ -79,7 +78,7 @@ void CarState::GeoDetic_TO_ENU(double lat, double lon, double h, double lat0, do
     // std::cout << "state x= " << Carstate.car_state.x << std::endl;
     // std::cout << "state y= " << Carstate.car_state.y << std::endl;
     // std::cout << "state yaw= " << Carstate.car_state.theta << std::endl;
-    saveState(Carstate.car_state.x,Carstate.car_state.y,Carstate.car_state.theta);
+    //saveState(Carstate.car_state.x,Carstate.car_state.y,Carstate.car_state.theta);
 
     // 发布车辆状态的消息，并设置接收标志位为真
     INSpub.publish(Carstate);
@@ -115,7 +114,7 @@ void CarState::GeoDetic_TO_ENU(double lat, double lon, double h, double lat0, do
         Carstate.car_state.theta += 2 * PII;
         diff+=360;
         }
-        saveAngle(oldAzimuth,msgs->azimuth,diff);
+        //saveAngle(oldAzimuth,msgs->azimuth,diff);
         Carstate.V=sqrt(pow(my_ins.east_velocity,2)+pow( my_ins.north_velocity,2)+pow(my_ins.ground_velocity,2));
         GeoDetic_TO_ENU((msgs->latitude) * PII / 180, (msgs->longitude) * PII / 180, msgs->altitude,
                             first_lat * PII / 180, first_lon * PII / 180, first_alt, &enu_xyz[0]);

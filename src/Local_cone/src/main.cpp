@@ -108,11 +108,11 @@ void GeoDetic_TO_ENU(double lat, double lon, double h, double lat0, double lon0,
 
 
  void doConeMsg(const common_msgs::Cone::ConstPtr &msgs){
-        ROS_DEBUG("进入锥筒回调函数进行处理");
+        //ROS_DEBUG("进入锥筒回调函数进行处理");
         // 检查INS数据是否已经更新
        if (!isFirstMsgReceived)
       {
-        ROS_WARN("INS 数据没更新!");
+        //ROS_WARN("INS 数据没更新!");
         return;
       }
        for (int i = 0; i < msgs->points.size(); ++i) {                                                          //先这样写   不一定是这样

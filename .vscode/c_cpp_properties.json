@@ -14,7 +14,8 @@
                 "/home/yeziheng/LIDAR_ye/src/nodelet_test/include/**",
                 "/home/yeziheng/LIDAR_ye/src/skidpad_detection/include/**",
                 "/usr/include/**",
-                "${workspaceFolder}/devel/.private/common_msgs/include"
+                "${workspaceFolder}/devel/.private/common_msgs/include",
+                "${workspaceFolder}/devel/.private/huat_msgs/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
