@@ -16,7 +16,8 @@
                 "/usr/include/**",
                 "${workspaceFolder}/devel/.private/common_msgs/include",
                 "${workspaceFolder}/devel/.private/huat_msgs/include",
-                "${workspaceFolder}/src/skidpad_detection/include"
+                "${workspaceFolder}/src/skidpad_detection/include",
+                "/opt/ros/melodic/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
