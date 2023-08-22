@@ -18,6 +18,8 @@
 #include "geometry_msgs/Point.h"
 #include "huat_msgs/HAUT_PathLimits.h"
 #include "huat_msgs/HUAT_VehcileCmd.h"
+#include <eigen_conversions/eigen_msg.h>
+#include <tf/transform_datatypes.h>
 using namespace std;
 
 #define l 1.55;
@@ -115,19 +117,35 @@ public:
     // }
     void posecallback(const huat_msgs::HUAT_CarState::ConstPtr &msgs)
     {
+        geometry_msgs::Pose pose;
+        pose.position.x = msgs->car_state.x;
+        pose.position.y = msgs->car_state.y;
+        pose.position.z = 0;
+        tf::Quaternion qAux;
+        qAux.setRPY(0.0, 0.0, msgs->car_state.theta);
+        tf::quaternionTFToMsg(qAux, pose.orientation);
+        tf::poseMsgToEigen(pose, this->localTf_);
+        this->localTf_ = this->localTf_.inverse();
+        this->localTfValid_ = true;
+
         gx = msgs->car_state.x;
         gy = msgs->car_state.y;
         current_speed = msgs->V;
         heading = -(msgs->car_state.theta);
-        cout << "gx=" << gx << endl;
-        cout << "gy=" << gy << endl;
-        cout << "heading = " << heading << endl;
+        // cout << "gx=" << gx << endl;
+        // cout << "gy=" << gy << endl;
+        // cout << "heading = " << heading << endl;
         // SaveCarPosition(gx, gy);
         // SaveHeading(heading);
     }
 
     void locationcallback(const nav_msgs::Path::ConstPtr &msgs)
     {
+        if (not this->localTfValid_)
+        {
+            ROS_WARN("[PP_car] CarState not being received.");
+            return;
+        }
         refx.clear();
         refy.clear();
         for (const auto &pose : msgs->poses)
@@ -137,6 +155,7 @@ public:
             refx.push_back(x);
             refy.push_back(y);
         }
+        pathmode++;
     }
 
     // refx.push_back(msgs->path.front().x);
@@ -153,7 +172,7 @@ public:
         {
             double distance = pow(gx - refx[i], 2) + pow(gy - refy[i], 2);
 
-            if (distance < min_distance) 
+            if (distance < min_distance)
             {
                 min_distance = distance;
                 idx = i;
@@ -192,18 +211,28 @@ public:
 
     void controlcommand(huat_msgs::HUAT_ControlCommand &cmd)
     {
+        cout << "车位于路径" << pathmode << endl;
         float delta_max = 0.4;
         int goal_idx = get_goal_idx();
         int lookhead_idx = get_lookahead_indices(goal_idx, lookahead, refx, refy);
         // SaveGoal_idx(lookhead_idx, refx, refy);
         if (goal_idx >= 0 && goal_idx < refx.size() && goal_idx < refy.size())
         {
-            float alpha = atan2(refy[lookhead_idx] - gy, refx[lookhead_idx] - gx) - heading;
+            Eigen::Vector3d product = localTf_ * Eigen::Vector3d(refx[lookhead_idx], refy[lookhead_idx], 0.0);
+            double goalX = product.x();
+            double goalY = product.y();
+            float alpha = atan2(goalY, goalX);
+            // float alpha = atan2(refy[lookhead_idx] - gy, refx[lookhead_idx] - gx) - heading;
             alpha = (alpha > pi) ? (alpha - 2 * pi) : (alpha < -pi) ? (alpha + 2 * pi)
                                                                     : alpha;
 
-            float delta = atan2(3.1 * sin(alpha), lookahead);
+            float delta = atan2(3.1 * sin(alpha) / lookahead, 1.0);
             delta = max(min(delta_max, delta), -delta_max);
+            if (abs(delta - fangle) > 0.2)
+            {
+                delta = (delta + fangle * 0.8) / 2.0;
+            }
+            fangle = delta;
             cmd.steering_angle.data = delta;
             // SaveAlpha( refx[goal_idx],  refy[goal_idx],  gx,  gy,  alpha,  delta);
             cout << "delta = " << delta << endl;
@@ -305,7 +334,7 @@ public:
     void SaveHeading(double heading0)
     {
         ofstream outfile1;
-        outfile1.open("/home/zhangjszs/LIDAR_ye/src/control/src/heading.txt", ios::out | ios::app);
+        outfile1.open("heading.txt", ios::out | ios::app);
         outfile1 << "heading " << heading0 << endl; // 以追加的方式写入文件
         outfile1.close();
     }
@@ -313,7 +342,7 @@ public:
     void SaveSteering(double steering_angle, int my_steering, int my_pedal_ratio)
     {
         ofstream outfile2;
-        outfile2.open("/home/zhangjszs/LIDAR_ye/src/control/src/steering.txt", ios::out | ios::app);
+        outfile2.open("srcsteering.txt", ios::out | ios::app);
         // outfile2 << "steering " << msgs->steering_angle.data << " my_steering " << my_steering << " my_pedal_ratio " << my_pedal_ratio << endl; // 以追加的方式写入文件
         outfile2 << steering_angle << " " << my_steering << " " << my_pedal_ratio << endl; // 以追加的方式写入文件
         outfile2.close();
@@ -322,7 +351,7 @@ public:
     void SaveGoal_idx(auto goal_idx, auto refx, auto refy)
     {
         ofstream outfile3;
-        outfile3.open("/home/zhangjszs/LIDAR_ye/src/control/src/goal_idx.txt", ios::out | ios::app);
+        outfile3.open("goal_idx.txt", ios::out | ios::app);
         outfile3 << "goal_idx=" << goal_idx << " refx=" << refx[goal_idx] << " refy=" << refy[goal_idx] << endl; // 以追加的方式写入文件
         outfile3.close();
     }
@@ -330,17 +359,17 @@ public:
     void SaveAlpha(double refx, double refy, double gx, double gy, double zhuanxiang, double delta)
     {
         ofstream outfile4;
-        outfile4.open("/home/zhangjszs/LIDAR_ye/src/control/src/alpha.txt", ios::out | ios::app);
+        outfile4.open("alpha.txt", ios::out | ios::app);
         outfile4 << "跟踪点 refx[goal_idx] = " << refx << " refy[goal_idx] = " << refy << endl; // 以追加的方式写入文件
         outfile4 << "车身位置 gx = " << gx << " gy = " << gy << endl;
-        outfile4 << "atan2(y,x) = " << zhuanxiang * 180 / 3.14 << endl; 
+        outfile4 << "atan2(y,x) = " << zhuanxiang * 180 / 3.14 << endl;
         outfile4 << "delta = " << (delta * 180 / 3.14159265358979 * 3.73) + 110 << endl;
         outfile4.close();
     }
     void SaveCarPosition(double gx, double gy)
     {
         ofstream outfile5;
-        outfile5.open("/home/zhangjszs/LIDAR_ye/src/control/src/CarPosition.txt", ios::out | ios::app);
+        outfile5.open("CarPosition.txt", ios::out | ios::app);
         outfile5 << "gx = " << gx << " gy = " << gy << endl;
         outfile5.close();
     }
@@ -360,6 +389,11 @@ private:
     double first_lon = 0;
     double first_alt = 0;
     bool imuflag = true;
+    Eigen::Affine3d localTf_;
+    bool localTfValid_ = false;
+    double fangle = 0;
+    double nowangle = 0;
+    int pathmode = 0;
 };
 
 int main(int argc, char **argv)

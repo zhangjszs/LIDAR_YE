@@ -13,8 +13,8 @@ run_command() {
 # sleep 3
 # run_command "bash ${sourceBash}/ASENSINGIMU.sh" &&
 # sleep 3 
-gnome-terminal -- bash -c "source /opt/ros/melodic/setup.bash && source /home/zhangjszs/LIDAR_ye/devel/setup.bash && rosrun control PP_car ; $SHELL"
+gnome-terminal -- bash -c "source /opt/ros/melodic/setup.bash && source /home/kerwin/LIDAR_ye/devel/setup.bash && rosrun control PP_car ; $SHELL"
 sleep 2
-gnome-terminal -- bash -c "source /opt/ros/melodic/setup.bash && source /home/zhangjszs/LIDAR_ye/devel/setup.bash && roslaunch cone_position cone.launch ; $SHELL"
+gnome-terminal -- bash -c "source /opt/ros/melodic/setup.bash && source /home/kerwin/LIDAR_ye/devel/setup.bash && roslaunch cone_position cone.launch ; $SHELL"
 
 

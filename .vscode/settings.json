@@ -76,5 +76,6 @@
         "core": "cpp",
         "dense": "cpp"
     },
-    "cmake.sourceDirectory": "/home/zhangjszs/LIDAR_ye/build/catkin_tools_prebuild"
+    "cmake.sourceDirectory": "/home/kerwin/LIDAR_ye/build/catkin_tools_prebuild",
+    "cmake.configureOnOpen": false
 }
