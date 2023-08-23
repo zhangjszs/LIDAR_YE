@@ -17,7 +17,8 @@
                 "${workspaceFolder}/devel/.private/common_msgs/include",
                 "${workspaceFolder}/devel/.private/huat_msgs/include",
                 "${workspaceFolder}/src/skidpad_detection/include",
-                "/opt/ros/melodic/include"
+                "/opt/ros/melodic/include",
+                "/usr/include/pcl-1.8"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

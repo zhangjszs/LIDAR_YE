@@ -12,6 +12,7 @@
 #include <std_msgs/Float64MultiArray.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <nav_msgs/Path.h>
+#include <std_msgs/Bool.h>
 #include "huat_msgs/HUAT_ASENSING.h"
 #include "huat_msgs/HUAT_CarState.h"
 #include "huat_msgs/HUAT_ControlCommand.h"
@@ -60,6 +61,7 @@ public:
         sub = nh.subscribe("/Carstate", 10, &PPControl::posecallback, this);                                  // 回调函数在此只是一个声明，只有遇到ros::spin()或ros::spinOnce()才开始处理被调用的数据
         sub_path = nh.subscribe("/skidpad_detection_node/log_path", 100, &PPControl::locationcallback, this); // 订阅轨迹信息
         sub_cmd = nh.subscribe("my_topic", 10, &PPControl::anglecallback, this);
+        sub_approachingGoalPub = nh.subscribe("/skidpad_detection_node/approaching_goal", 100, &PPControl::approachingGoalPubcallback, this);
     }
 
 public:
@@ -115,6 +117,13 @@ public:
     // gz = enu_xyz[2];
     // cout<<"gx=" << gx << " gy= " << gy << endl;
     // }
+
+    void approachingGoalPubcallback(const std_msgs::Bool::ConstPtr &msg)
+    {
+        approachingGoalPub = msg->data;
+        std::cout << "approachingGoalPub = " << approachingGoalPub << std::endl;
+    }
+
     void posecallback(const huat_msgs::HUAT_CarState::ConstPtr &msgs)
     {
         geometry_msgs::Pose pose;
@@ -182,6 +191,7 @@ public:
         //     cout << "refx = " << refx[idx] << "refy =" << refy[idx] << endl;
         return idx;
     }
+
     // 接下来寻找经过前视距离ld0后的最接近的点
     int get_lookahead_indices(int current_idx, double lookahead, const vector<double> &refx, const vector<double> &refy)
     {
@@ -230,7 +240,7 @@ public:
             delta = max(min(delta_max, delta), -delta_max);
             if (abs(delta - fangle) > 0.2)
             {
-                delta = (delta + fangle * 0.8) / 2.0;
+                delta = (delta * 1.2 + fangle * 0.8) / 2.0;
             }
             fangle = delta;
             cmd.steering_angle.data = delta;
@@ -260,7 +270,7 @@ public:
             cout << "cmd.throttle.data = " << cmd.throttle.data;
             pub_cmd.publish(cmd);
 
-            if (goal_idx >= refx.size() - 1)
+            if ((goal_idx >= refx.size() - 1) && approachingGoalPub)
             {
                 cmd.steering_angle.data = 0;
                 cmd.throttle.data = 0;
@@ -275,6 +285,7 @@ public:
             cout << "得不到有效的惯导路径信息" << endl;
         }
     }
+
     void anglecallback(const huat_msgs::HUAT_ControlCommand::ConstPtr &msgs)
     {
 
@@ -285,6 +296,7 @@ public:
         cout << "my_pedal_ratio " << my_pedal_ratio << endl;
         // SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
     }
+
     void vehcile_finall_cmd(huat_msgs::HUAT_VehcileCmd &finall_cmd)
     {
         cout << "read!" << endl;
@@ -313,8 +325,8 @@ public:
 
             if (state.racing_status == 4)
             {
-                my_racing_status = 4;
                 my_brake_force = 80;
+                my_racing_status = 4;
             }
             finall_cmd.head1 = 0XAA;
             finall_cmd.head2 = 0X55;
@@ -366,6 +378,7 @@ public:
         outfile4 << "delta = " << (delta * 180 / 3.14159265358979 * 3.73) + 110 << endl;
         outfile4.close();
     }
+
     void SaveCarPosition(double gx, double gy)
     {
         ofstream outfile5;
@@ -376,7 +389,7 @@ public:
 
 private:
     ros::NodeHandle nh;
-    ros::Subscriber sub, sub_path, sub_cmd;
+    ros::Subscriber sub, sub_path, sub_cmd, sub_approachingGoalPub;
     ros::Publisher pub_cmd, pub_finall_cmd;
     double heading, gx, gy, gz;
     huat_msgs::HUAT_VehcileCmd vehcile_cmd;
@@ -394,6 +407,7 @@ private:
     double fangle = 0;
     double nowangle = 0;
     int pathmode = 0;
+    bool approachingGoalPub = false;
 };
 
 int main(int argc, char **argv)
