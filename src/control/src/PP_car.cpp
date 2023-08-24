@@ -215,7 +215,7 @@ public:
             }
         }
         if (idx >= 0 && idx < refx.size())
-            cout << "追踪的点：refx_f = " << refx[idx] << " refy_r  =" << refy[idx] << endl;
+            cout << "追踪的点:refx_f = " << refx[idx] << " refy_r  =" << refy[idx] << endl;
         return idx;
     }
 
