@@ -161,9 +161,11 @@ public:
         {
             double x = pose.pose.position.x;
             double y = pose.pose.position.y;
+            // SavePath(x, y);
             refx.push_back(x);
             refy.push_back(y);
         }
+        
         pathmode++;
     }
 
@@ -346,7 +348,7 @@ public:
     void SaveHeading(double heading0)
     {
         ofstream outfile1;
-        outfile1.open("heading.txt", ios::out | ios::app);
+        outfile1.open("/home/kerwin/LIDAR_ye/src/control/src/heading.txt", ios::out | ios::app);
         outfile1 << "heading " << heading0 << endl; // 以追加的方式写入文件
         outfile1.close();
     }
@@ -354,7 +356,7 @@ public:
     void SaveSteering(double steering_angle, int my_steering, int my_pedal_ratio)
     {
         ofstream outfile2;
-        outfile2.open("srcsteering.txt", ios::out | ios::app);
+        outfile2.open("/home/kerwin/LIDAR_ye/src/control/src/srcsteering.txt", ios::out | ios::app);
         // outfile2 << "steering " << msgs->steering_angle.data << " my_steering " << my_steering << " my_pedal_ratio " << my_pedal_ratio << endl; // 以追加的方式写入文件
         outfile2 << steering_angle << " " << my_steering << " " << my_pedal_ratio << endl; // 以追加的方式写入文件
         outfile2.close();
@@ -363,7 +365,7 @@ public:
     void SaveGoal_idx(auto goal_idx, auto refx, auto refy)
     {
         ofstream outfile3;
-        outfile3.open("goal_idx.txt", ios::out | ios::app);
+        outfile3.open("/home/kerwin/LIDAR_ye/src/control/src/goal_idx.txt", ios::out | ios::app);
         outfile3 << "goal_idx=" << goal_idx << " refx=" << refx[goal_idx] << " refy=" << refy[goal_idx] << endl; // 以追加的方式写入文件
         outfile3.close();
     }
@@ -371,7 +373,7 @@ public:
     void SaveAlpha(double refx, double refy, double gx, double gy, double zhuanxiang, double delta)
     {
         ofstream outfile4;
-        outfile4.open("alpha.txt", ios::out | ios::app);
+        outfile4.open("/home/kerwin/LIDAR_ye/src/control/src/alpha.txt", ios::out | ios::app);
         outfile4 << "跟踪点 refx[goal_idx] = " << refx << " refy[goal_idx] = " << refy << endl; // 以追加的方式写入文件
         outfile4 << "车身位置 gx = " << gx << " gy = " << gy << endl;
         outfile4 << "atan2(y,x) = " << zhuanxiang * 180 / 3.14 << endl;
@@ -382,9 +384,18 @@ public:
     void SaveCarPosition(double gx, double gy)
     {
         ofstream outfile5;
-        outfile5.open("CarPosition.txt", ios::out | ios::app);
-        outfile5 << "gx = " << gx << " gy = " << gy << endl;
+        outfile5.open("/home/kerwin/LIDAR_ye/src/control/src/CarPosition.txt", ios::out | ios::app);
+        // outfile5 << "gx = " << gx << " gy = " << gy << endl;
+        outfile5 << gx << " " << gy << endl;
         outfile5.close();
+    }
+
+    void SavePath(double refx, double refy)
+    {
+        ofstream outfile6;
+        outfile6.open("/home/kerwin/LIDAR_ye/src/control/src/Path.txt", ios::out | ios::app);
+        outfile6 << refx << " " << refy << endl;
+        outfile6.close();
     }
 
 private:
