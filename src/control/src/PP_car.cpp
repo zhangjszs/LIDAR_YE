@@ -157,33 +157,33 @@ public:
         }
         refx.clear();
         refy.clear();
-        // for (const auto &pose : msgs->poses)
-        // {
-        //     double x = pose.pose.position.x;
-        //     double y = pose.pose.position.y;
-        //     // SavePath(x, y);
-        //     refx.push_back(x);
-        //     refy.push_back(y);
-        // }
-        // 从txt文件中读取数据
-        std::ifstream inputFile("/home/kerwin/LIDAR_ye/src/control/src/Path.txt");
-        if (inputFile.is_open())
+        for (const auto &pose : msgs->poses)
         {
-            std::string line;
-            while (std::getline(inputFile, line))
-            {
-                std::istringstream iss(line);
-                double x, y;
-                if (!(iss >> x >> y))
-                {
-                    ROS_ERROR("Error reading data from file.");
-                    break;
-                }
-                refx.push_back(x);
-                refy.push_back(y);
-            }
-            inputFile.close();
+            double x = pose.pose.position.x;
+            double y = pose.pose.position.y;
+            // SavePath(x, y);
+            refx.push_back(x);
+            refy.push_back(y);
         }
+        // 从txt文件中读取数据
+        // std::ifstream inputFile("/home/kerwin/LIDAR_ye/src/control/src/Path.txt");
+        // if (inputFile.is_open())
+        // {
+        //     std::string line;
+        //     while (std::getline(inputFile, line))
+        //     {
+        //         std::istringstream iss(line);
+        //         double x, y;
+        //         if (!(iss >> x >> y))
+        //         {
+        //             ROS_ERROR("Error reading data from file.");
+        //             break;
+        //         }
+        //         refx.push_back(x);
+        //         refy.push_back(y);
+        //     }
+        //     inputFile.close();
+        // }
         pathmode++;
     }
 
