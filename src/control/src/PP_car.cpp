@@ -157,15 +157,33 @@ public:
         }
         refx.clear();
         refy.clear();
-        for (const auto &pose : msgs->poses)
+        // for (const auto &pose : msgs->poses)
+        // {
+        //     double x = pose.pose.position.x;
+        //     double y = pose.pose.position.y;
+        //     // SavePath(x, y);
+        //     refx.push_back(x);
+        //     refy.push_back(y);
+        // }
+        // 从txt文件中读取数据
+        std::ifstream inputFile("/home/kerwin/LIDAR_ye/src/control/src/Path.txt");
+        if (inputFile.is_open())
         {
-            double x = pose.pose.position.x;
-            double y = pose.pose.position.y;
-            // SavePath(x, y);
-            refx.push_back(x);
-            refy.push_back(y);
+            std::string line;
+            while (std::getline(inputFile, line))
+            {
+                std::istringstream iss(line);
+                double x, y;
+                if (!(iss >> x >> y))
+                {
+                    ROS_ERROR("Error reading data from file.");
+                    break;
+                }
+                refx.push_back(x);
+                refy.push_back(y);
+            }
+            inputFile.close();
         }
-        
         pathmode++;
     }
 
@@ -248,7 +266,7 @@ public:
             cmd.steering_angle.data = delta;
             // SaveAlpha( refx[goal_idx],  refy[goal_idx],  gx,  gy,  alpha,  delta);
             cout << "delta = " << delta << endl;
-
+            
             cout << "current_speed is: " << current_speed << endl;
 
             long_error = 4.0 - current_speed;
@@ -296,7 +314,7 @@ public:
 
         my_pedal_ratio = int(msgs->throttle.data); // 踏板率
         cout << "my_pedal_ratio " << my_pedal_ratio << endl;
-        // SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
+        //  SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
     }
 
     void vehcile_finall_cmd(huat_msgs::HUAT_VehcileCmd &finall_cmd)
