@@ -56,11 +56,11 @@ public:
         my_racing_status = 0;
         my_checksum = 100;
 
-        pub_cmd = nh.advertise<huat_msgs::HUAT_ControlCommand>("my_topic", 10);
+        // pub_cmd = nh.advertise<huat_msgs::HUAT_ControlCommand>("my_topic", 10);
         pub_finall_cmd = nh.advertise<huat_msgs::HUAT_VehcileCmd>("finall_cad", 100);
         sub = nh.subscribe("/Carstate", 10, &PPControl::posecallback, this);                                  // 回调函数在此只是一个声明，只有遇到ros::spin()或ros::spinOnce()才开始处理被调用的数据
         sub_path = nh.subscribe("/skidpad_detection_node/log_path", 100, &PPControl::locationcallback, this); // 订阅轨迹信息
-        sub_cmd = nh.subscribe("my_topic", 10, &PPControl::anglecallback, this);
+        // sub_cmd = nh.subscribe("my_topic", 10, &PPControl::anglecallback, this);
         sub_approachingGoalPub = nh.subscribe("/skidpad_detection_node/approaching_goal", 100, &PPControl::approachingGoalPubcallback, this);
     }
 
@@ -239,7 +239,7 @@ public:
         return idx;
     }
 
-    void controlcommand(huat_msgs::HUAT_ControlCommand &cmd)
+    void controlcommand(huat_msgs::HUAT_ControlCommand &cmd,huat_msgs::HUAT_VehcileCmd &finall_cmd)
     {
         cout << "车位于路径" << pathmode << endl;
         float delta_max = 0.4;
@@ -266,7 +266,8 @@ public:
             cmd.steering_angle.data = delta;
             // SaveAlpha( refx[goal_idx],  refy[goal_idx],  gx,  gy,  alpha,  delta);
             cout << "delta = " << delta << endl;
-            
+            my_steering = int(cmd.steering_angle.data*180/M_PI*3.73)+110;//看旧工控机代码
+            cout << "my_steering "<< my_steering << endl;                             //转角
             cout << "current_speed is: " << current_speed << endl;
 
             long_error = 4.0 - current_speed;
@@ -275,53 +276,21 @@ public:
 
             if (current_speed > 2)
             {
-                long_current = 10;
+                long_current = 5;//10
             }
             if (long_current > 30)
             {
-                long_current = 30;
+                long_current = 5;//30
             }
             if (current_speed <= 0.3)
             {
-                long_current = 50;
+                long_current = 5;//50
             }
 
             cmd.throttle.data = int(long_current);
             cout << "cmd.throttle.data = " << cmd.throttle.data;
-            pub_cmd.publish(cmd);
-
-            if ((goal_idx >= refx.size() - 1) && approachingGoalPub)
+            if (input_mode == 2)
             {
-                cmd.steering_angle.data = 0;
-                cmd.throttle.data = 0;
-                cmd.racing_status = 4;
-                pub_cmd.publish(cmd);
-                cout << "已经到达离线轨迹的最后一个点，停止跟踪！" << endl;
-                // ros::shutdown();
-            }
-        }
-        else
-        {
-            cout << "得不到有效的惯导路径信息" << endl;
-        }
-    }
-
-    void anglecallback(const huat_msgs::HUAT_ControlCommand::ConstPtr &msgs)
-    {
-
-        my_steering = int(msgs->steering_angle.data * 180 / 3.14159265358979 * 3.73) + 110; // 这里的角度数加了110  他这里110才是中心
-        cout << "my_steering " << my_steering << endl;                                      // 转角
-
-        my_pedal_ratio = int(msgs->throttle.data); // 踏板率
-        cout << "my_pedal_ratio " << my_pedal_ratio << endl;
-        //  SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
-    }
-
-    void vehcile_finall_cmd(huat_msgs::HUAT_VehcileCmd &finall_cmd)
-    {
-        cout << "read!" << endl;
-        if (input_mode == 2)
-        {
             my_gear_position = 1; // 齿轮
             my_working_mode = 1;
 
@@ -361,7 +330,79 @@ public:
             finall_cmd.checksum = my_steering + my_brake_force + my_pedal_ratio + my_gear_position + my_working_mode + my_racing_num + my_racing_status;
             pub_finall_cmd.publish(finall_cmd);
         }
+
+            if ((goal_idx >= refx.size() - 1) && approachingGoalPub)
+            {
+                cmd.steering_angle.data = 0;
+                cmd.throttle.data = 0;
+                cmd.racing_status = 4;
+                pub_cmd.publish(cmd);
+                cout << "已经到达离线轨迹的最后一个点，停止跟踪！" << endl;
+                // ros::shutdown();
+            }
+        }
+        else
+        {
+            cout << "得不到有效的惯导路径信息" << endl;
+        }
     }
+
+    // void anglecallback(const huat_msgs::HUAT_ControlCommand::ConstPtr &msgs)
+    // {
+
+    //     my_steering = int(msgs->steering_angle.data * 180 / 3.14159265358979 * 3.73) + 110; // 这里的角度数加了110  他这里110才是中心
+    //     cout << "my_steering " << my_steering << endl;                                      // 转角
+
+    //     my_pedal_ratio = int(msgs->throttle.data); // 踏板率
+    //     cout << "my_pedal_ratio " << my_pedal_ratio << endl;
+    //     //  SaveSteering(msgs->steering_angle.data, my_steering, my_pedal_ratio);
+    // }
+
+    // void vehcile_finall_cmd(huat_msgs::HUAT_VehcileCmd &finall_cmd)
+    // {
+    //     cout << "read!" << endl;
+    //     if (input_mode == 2)
+    //     {
+    //         my_gear_position = 1; // 齿轮
+    //         my_working_mode = 1;
+
+    //         if (my_steering < 0)
+    //         {
+    //             my_steering = 0;
+    //         }
+    //         else if (my_steering > 220)
+    //         {
+    //             my_steering = 220;
+    //         }
+
+    //         if (my_pedal_ratio < 0) // 踏板率
+    //         {
+    //             my_pedal_ratio = 0;
+    //         }
+    //         else if (my_pedal_ratio > 100) // 踏板率
+    //         {
+    //             my_pedal_ratio = 100;
+    //         }
+
+    //         if (state.racing_status == 4)
+    //         {
+    //             my_brake_force = 80;
+    //             my_racing_status = 4;
+    //         }
+    //         finall_cmd.head1 = 0XAA;
+    //         finall_cmd.head2 = 0X55;
+    //         finall_cmd.length = 10;
+    //         finall_cmd.steering = my_steering;
+    //         finall_cmd.brake_force = my_brake_force;
+    //         finall_cmd.pedal_ratio = my_pedal_ratio;
+    //         finall_cmd.gear_position = my_gear_position;
+    //         finall_cmd.working_mode = my_working_mode;
+    //         finall_cmd.racing_num = my_racing_num;
+    //         finall_cmd.racing_status = my_racing_status;
+    //         finall_cmd.checksum = my_steering + my_brake_force + my_pedal_ratio + my_gear_position + my_working_mode + my_racing_num + my_racing_status;
+    //         pub_finall_cmd.publish(finall_cmd);
+    //     }
+    // }
 
     void SaveHeading(double heading0)
     {
@@ -450,9 +491,8 @@ int main(int argc, char **argv)
     while (ros::ok())
     {
         ros::spinOnce();
-        car.controlcommand(cc);
-        car.vehcile_finall_cmd(a);
-        rate.sleep();
+		car.controlcommand(cc,a);
+		rate.sleep();
     }
     return 0;
 }
