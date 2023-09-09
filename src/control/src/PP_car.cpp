@@ -331,7 +331,7 @@ public:
             pub_finall_cmd.publish(finall_cmd);
         }
 
-            if ((goal_idx >= refx.size() - 1) && approachingGoalPub)
+            if ((goal_idx >= refx.size() - 1) || approachingGoalPub)
             {
                 cmd.steering_angle.data = 0;
                 cmd.throttle.data = 0;

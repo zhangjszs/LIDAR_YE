@@ -1,0 +1,2501 @@
+desc: (none)
+cmd: ./success.sh
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=595621
+mem_heap_B=5
+mem_heap_extra_B=19
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=756592
+mem_heap_B=39923
+mem_heap_extra_B=5885
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=942876
+mem_heap_B=57055
+mem_heap_extra_B=11489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=1108782
+mem_heap_B=57055
+mem_heap_extra_B=11489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=1207341
+mem_heap_B=57065
+mem_heap_extra_B=11503
+mem_stacks_B=0
+heap_tree=detailed
+n4: 57065 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n10: 47430 0x18F0EC: xmalloc (in /bin/bash)
+  n3: 16384 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+  n1: 5952 0x151551: ??? (in /bin/bash)
+   n2: 5952 0x1549CD: ??? (in /bin/bash)
+    n2: 5472 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 1104 in 23 places, all below massif's threshold (1.00%)
+    n0: 480 in 2 places, all below massif's threshold (1.00%)
+  n1: 5217 0x15220F: ??? (in /bin/bash)
+   n1: 5217 0x155F16: ??? (in /bin/bash)
+    n1: 5217 0x188F23: ??? (in /bin/bash)
+     n1: 5217 0x1892B7: set_locale_var (in /bin/bash)
+      n1: 5217 0x18940D: set_default_lang (in /bin/bash)
+       n0: 5217 0x1386F4: main (in /bin/bash)
+  n1: 5217 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 5217 0x134F7C: ??? (in /bin/bash)
+    n0: 5217 0x1386EF: main (in /bin/bash)
+  n2: 4204 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4202 0x154A54: ??? (in /bin/bash)
+    n1: 3947 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3947 0x134F7C: ??? (in /bin/bash)
+      n0: 3947 0x1386EF: main (in /bin/bash)
+    n0: 255 in 15 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+  n1: 3968 0x174063: hash_insert (in /bin/bash)
+   n2: 3968 0x154A06: ??? (in /bin/bash)
+    n2: 3648 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 736 in 23 places, all below massif's threshold (1.00%)
+    n0: 320 in 2 places, all below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n2: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n1: 1024 0x157754: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+    n1: 1024 0x1577CA: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+  n1: 1570 0x151565: ??? (in /bin/bash)
+   n2: 1570 0x1549CD: ??? (in /bin/bash)
+    n2: 1464 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 188 in 23 places, all below massif's threshold (1.00%)
+    n0: 106 in 2 places, all below massif's threshold (1.00%)
+  n2: 1570 0x1549EB: ??? (in /bin/bash)
+   n2: 1464 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 188 in 23 places, all below massif's threshold (1.00%)
+   n0: 106 in 2 places, all below massif's threshold (1.00%)
+  n0: 1300 in 25 places, all below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n0: 1171 in 10 places, all below massif's threshold (1.00%)
+ n1: 1000 0x18F16E: xrealloc (in /bin/bash)
+  n1: 1000 0x155F69: ??? (in /bin/bash)
+   n1: 1000 0x188F23: ??? (in /bin/bash)
+    n1: 1000 0x1892B7: set_locale_var (in /bin/bash)
+     n1: 1000 0x18940D: set_default_lang (in /bin/bash)
+      n0: 1000 0x1386F4: main (in /bin/bash)
+#-----------
+snapshot=6
+#-----------
+time=1371764
+mem_heap_B=66928
+mem_heap_extra_B=12696
+mem_stacks_B=0
+heap_tree=detailed
+n4: 66928 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n14: 54236 0x18F0EC: xmalloc (in /bin/bash)
+  n3: 16384 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+  n1: 6048 0x151551: ??? (in /bin/bash)
+   n2: 6048 0x1549CD: ??? (in /bin/bash)
+    n2: 5520 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 1152 in 24 places, all below massif's threshold (1.00%)
+    n0: 528 in 2 places, all below massif's threshold (1.00%)
+  n1: 5217 0x15220F: ??? (in /bin/bash)
+   n1: 5217 0x155F16: ??? (in /bin/bash)
+    n1: 5217 0x188F23: ??? (in /bin/bash)
+     n1: 5217 0x1892B7: set_locale_var (in /bin/bash)
+      n1: 5217 0x18940D: set_default_lang (in /bin/bash)
+       n0: 5217 0x1386F4: main (in /bin/bash)
+  n1: 5197 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 5197 0x134F7C: ??? (in /bin/bash)
+    n0: 5197 0x1386EF: main (in /bin/bash)
+  n2: 4191 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4189 0x154A54: ??? (in /bin/bash)
+    n1: 3929 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3929 0x134F7C: ??? (in /bin/bash)
+      n0: 3929 0x1386EF: main (in /bin/bash)
+    n0: 260 in 16 places, all below massif's threshold (1.00%)
+   n0: 2 in 1 place, below massif's threshold (1.00%)
+  n1: 4032 0x174063: hash_insert (in /bin/bash)
+   n2: 4032 0x154A06: ??? (in /bin/bash)
+    n2: 3680 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 768 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 2 places, all below massif's threshold (1.00%)
+  n0: 3955 in 54 places, all below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n2: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n1: 1024 0x157754: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+    n1: 1024 0x1577CA: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+  n1: 1594 0x151565: ??? (in /bin/bash)
+   n2: 1594 0x1549CD: ??? (in /bin/bash)
+    n2: 1477 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 201 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 2 places, all below massif's threshold (1.00%)
+  n2: 1594 0x1549EB: ??? (in /bin/bash)
+   n2: 1477 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 201 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 2 places, all below massif's threshold (1.00%)
+  n1: 1024 0x147E6C: cmd_init (in /bin/bash)
+   n0: 1024 0x138836: main (in /bin/bash)
+  n1: 1024 0x147E88: cmd_init (in /bin/bash)
+   n0: 1024 0x138836: main (in /bin/bash)
+  n1: 1024 0x17735C: uwp_init (in /bin/bash)
+   n0: 1024 0x13883B: main (in /bin/bash)
+  n1: 904 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 904 in 16 places, all below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n3: 3952 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n1: 1000 0x155F69: ??? (in /bin/bash)
+   n1: 1000 0x188F23: ??? (in /bin/bash)
+    n1: 1000 0x1892B7: set_locale_var (in /bin/bash)
+     n1: 1000 0x18940D: set_default_lang (in /bin/bash)
+      n0: 1000 0x1386F4: main (in /bin/bash)
+  n0: 752 in 3 places, all below massif's threshold (1.00%)
+ n0: 1276 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=1565018
+mem_heap_B=64286
+mem_heap_extra_B=11578
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1645912
+mem_heap_B=72284
+mem_heap_extra_B=13468
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1776853
+mem_heap_B=72311
+mem_heap_extra_B=13441
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1950312
+mem_heap_B=72288
+mem_heap_extra_B=13464
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2056972
+mem_heap_B=72738
+mem_heap_extra_B=13630
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2216445
+mem_heap_B=73126
+mem_heap_extra_B=13874
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2325252
+mem_heap_B=73541
+mem_heap_extra_B=14187
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=2468053
+mem_heap_B=74011
+mem_heap_extra_B=14397
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2578319
+mem_heap_B=73732
+mem_heap_extra_B=14036
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2738771
+mem_heap_B=73847
+mem_heap_extra_B=14193
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=2831969
+mem_heap_B=74452
+mem_heap_extra_B=14268
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=2937327
+mem_heap_B=74153
+mem_heap_extra_B=14271
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=3128877
+mem_heap_B=75135
+mem_heap_extra_B=14577
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=3281838
+mem_heap_B=70818
+mem_heap_extra_B=13022
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=3479929
+mem_heap_B=75227
+mem_heap_extra_B=15029
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=3577200
+mem_heap_B=74784
+mem_heap_extra_B=14576
+mem_stacks_B=0
+heap_tree=detailed
+n5: 74784 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n16: 61939 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16384 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 6144 0x151551: ??? (in /bin/bash)
+   n2: 6144 0x1549CD: ??? (in /bin/bash)
+    n2: 5616 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 1248 in 24 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n1: 5205 0x15220F: ??? (in /bin/bash)
+   n2: 5205 0x155F16: ??? (in /bin/bash)
+    n1: 5205 0x14E0E8: execute_command_internal (in /bin/bash)
+     n1: 5205 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 5205 0x194ECC: ??? (in /bin/bash)
+       n1: 5205 0x195085: source_file (in /bin/bash)
+        n1: 5205 0x19F457: source_builtin (in /bin/bash)
+         n1: 5205 0x1354CD: ??? (in /bin/bash)
+          n1: 5205 0x1361F7: ??? (in /bin/bash)
+           n1: 5205 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 5205 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 5205 0x194ECC: ??? (in /bin/bash)
+              n1: 5205 0x195085: source_file (in /bin/bash)
+               n1: 5205 0x19F457: source_builtin (in /bin/bash)
+                n1: 5205 0x1354CD: ??? (in /bin/bash)
+                 n1: 5205 0x1361F7: ??? (in /bin/bash)
+                  n1: 5205 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 5205 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 5205 0x13A272: reader_loop (in /bin/bash)
+                     n0: 5205 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 5197 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 5197 0x134F7C: ??? (in /bin/bash)
+    n0: 5197 0x1386EF: main (in /bin/bash)
+  n0: 4803 in 84 places, all below massif's threshold (1.00%)
+  n2: 4252 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4246 0x154A54: ??? (in /bin/bash)
+    n1: 3929 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3929 0x134F7C: ??? (in /bin/bash)
+      n0: 3929 0x1386EF: main (in /bin/bash)
+    n0: 317 in 16 places, all below massif's threshold (1.00%)
+   n0: 6 in 1 place, below massif's threshold (1.00%)
+  n1: 4096 0x174063: hash_insert (in /bin/bash)
+   n2: 4096 0x154A06: ??? (in /bin/bash)
+    n2: 3744 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 832 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+  n1: 3540 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3540 in 18 places, all below massif's threshold (1.00%)
+  n1: 3036 0x194DF4: ??? (in /bin/bash)
+   n1: 3036 0x195085: source_file (in /bin/bash)
+    n1: 3036 0x19F457: source_builtin (in /bin/bash)
+     n1: 3036 0x1354CD: ??? (in /bin/bash)
+      n1: 3036 0x1361F7: ??? (in /bin/bash)
+       n2: 3036 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n1: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+        n0: 261 in 1 place, below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n2: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n1: 1024 0x157754: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+    n1: 1024 0x1577CA: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+  n1: 1617 0x151565: ??? (in /bin/bash)
+   n2: 1617 0x1549CD: ??? (in /bin/bash)
+    n2: 1500 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 224 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 1617 0x1549EB: ??? (in /bin/bash)
+   n2: 1500 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 224 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 1024 0x147E6C: cmd_init (in /bin/bash)
+   n0: 1024 0x138836: main (in /bin/bash)
+  n1: 1024 0x147E88: cmd_init (in /bin/bash)
+   n0: 1024 0x138836: main (in /bin/bash)
+  n1: 1024 0x17735C: uwp_init (in /bin/bash)
+   n0: 1024 0x13883B: main (in /bin/bash)
+  n1: 928 0x17B072: array_create_element (in /bin/bash)
+   n0: 928 in 4 places, all below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 2970 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 770 in 7 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+ n2: 1187 0x18F151: xrealloc (in /bin/bash)
+  n2: 1040 0x155F69: ??? (in /bin/bash)
+   n1: 1040 0x136521: ??? (in /bin/bash)
+    n1: 1040 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1040 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1040 0x194ECC: ??? (in /bin/bash)
+       n1: 1040 0x195085: source_file (in /bin/bash)
+        n1: 1040 0x19F457: source_builtin (in /bin/bash)
+         n1: 1040 0x1354CD: ??? (in /bin/bash)
+          n1: 1040 0x1361F7: ??? (in /bin/bash)
+           n1: 1040 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1040 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1040 0x194ECC: ??? (in /bin/bash)
+              n1: 1040 0x195085: source_file (in /bin/bash)
+               n1: 1040 0x19F457: source_builtin (in /bin/bash)
+                n1: 1040 0x1354CD: ??? (in /bin/bash)
+                 n1: 1040 0x1361F7: ??? (in /bin/bash)
+                  n1: 1040 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1040 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1040 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1040 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 147 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=3698194
+mem_heap_B=79200
+mem_heap_extra_B=15200
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=3784889
+mem_heap_B=78937
+mem_heap_extra_B=14943
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=3912385
+mem_heap_B=78959
+mem_heap_extra_B=15233
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=4051326
+mem_heap_B=78715
+mem_heap_extra_B=15133
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=4247668
+mem_heap_B=79339
+mem_heap_extra_B=15293
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=4362397
+mem_heap_B=79333
+mem_heap_extra_B=15219
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=4459796
+mem_heap_B=79610
+mem_heap_extra_B=15326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=4573178
+mem_heap_B=80563
+mem_heap_extra_B=15565
+mem_stacks_B=0
+heap_tree=detailed
+n5: 80563 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n16: 67516 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16384 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 6240 0x151551: ??? (in /bin/bash)
+   n2: 6240 0x1549CD: ??? (in /bin/bash)
+    n2: 5712 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 1344 in 24 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n0: 5974 in 85 places, all below massif's threshold (1.00%)
+  n1: 5706 0x194DF4: ??? (in /bin/bash)
+   n1: 5706 0x195085: source_file (in /bin/bash)
+    n1: 5706 0x19F457: source_builtin (in /bin/bash)
+     n1: 5706 0x1354CD: ??? (in /bin/bash)
+      n1: 5706 0x1361F7: ??? (in /bin/bash)
+       n2: 5706 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 5445 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 5445 0x194ECC: ??? (in /bin/bash)
+          n1: 5445 0x195085: source_file (in /bin/bash)
+           n1: 5445 0x19F457: source_builtin (in /bin/bash)
+            n1: 5445 0x1354CD: ??? (in /bin/bash)
+             n1: 5445 0x1361F7: ??? (in /bin/bash)
+              n2: 5445 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n1: 2670 0x1958F6: parse_and_execute (in /bin/bash)
+                n1: 2670 0x194ECC: ??? (in /bin/bash)
+                 n1: 2670 0x195085: source_file (in /bin/bash)
+                  n1: 2670 0x19F457: source_builtin (in /bin/bash)
+                   n1: 2670 0x1354CD: ??? (in /bin/bash)
+                    n1: 2670 0x1361F7: ??? (in /bin/bash)
+                     n1: 2670 0x14E0D6: execute_command_internal (in /bin/bash)
+                      n1: 2670 0x14FBF0: execute_command (in /bin/bash)
+                       n1: 2670 0x13A272: reader_loop (in /bin/bash)
+                        n0: 2670 0x138C8D: main (in /bin/bash)
+        n0: 261 in 1 place, below massif's threshold (1.00%)
+  n3: 5372 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3132 in 16 places, all below massif's threshold (1.00%)
+   n1: 1120 0x136017: ??? (in /bin/bash)
+    n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+     n0: 1120 in 2 places, all below massif's threshold (1.00%)
+   n1: 1120 0x136028: ??? (in /bin/bash)
+    n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+     n0: 1120 in 2 places, all below massif's threshold (1.00%)
+  n1: 5205 0x15220F: ??? (in /bin/bash)
+   n2: 5205 0x155F16: ??? (in /bin/bash)
+    n1: 5205 0x14E0E8: execute_command_internal (in /bin/bash)
+     n1: 5205 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 5205 0x194ECC: ??? (in /bin/bash)
+       n1: 5205 0x195085: source_file (in /bin/bash)
+        n1: 5205 0x19F457: source_builtin (in /bin/bash)
+         n1: 5205 0x1354CD: ??? (in /bin/bash)
+          n1: 5205 0x1361F7: ??? (in /bin/bash)
+           n1: 5205 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 5205 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 5205 0x194ECC: ??? (in /bin/bash)
+              n1: 5205 0x195085: source_file (in /bin/bash)
+               n1: 5205 0x19F457: source_builtin (in /bin/bash)
+                n1: 5205 0x1354CD: ??? (in /bin/bash)
+                 n1: 5205 0x1361F7: ??? (in /bin/bash)
+                  n1: 5205 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 5205 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 5205 0x13A272: reader_loop (in /bin/bash)
+                     n0: 5205 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 4691 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4691 0x134F7C: ??? (in /bin/bash)
+    n0: 4691 0x1386EF: main (in /bin/bash)
+  n2: 4170 0x153A67: make_variable_value (in /bin/bash)
+   n2: 3848 0x154A54: ??? (in /bin/bash)
+    n1: 3489 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3489 0x134F7C: ??? (in /bin/bash)
+      n0: 3489 0x1386EF: main (in /bin/bash)
+    n0: 359 in 16 places, all below massif's threshold (1.00%)
+   n0: 322 in 1 place, below massif's threshold (1.00%)
+  n1: 4160 0x174063: hash_insert (in /bin/bash)
+   n2: 4160 0x154A06: ??? (in /bin/bash)
+    n2: 3808 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 896 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n2: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n1: 1024 0x157754: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+    n1: 1024 0x1577CA: initialize_shell_variables (in /bin/bash)
+     n1: 1024 0x134F7C: ??? (in /bin/bash)
+      n0: 1024 0x1386EF: main (in /bin/bash)
+  n1: 1703 0x151565: ??? (in /bin/bash)
+   n2: 1703 0x1549CD: ??? (in /bin/bash)
+    n2: 1586 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 310 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 1703 0x1549EB: ??? (in /bin/bash)
+   n2: 1586 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 310 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 1088 0x17B072: array_create_element (in /bin/bash)
+   n0: 1088 in 4 places, all below massif's threshold (1.00%)
+  n1: 1024 0x147E6C: cmd_init (in /bin/bash)
+   n0: 1024 0x138836: main (in /bin/bash)
+  n1: 1024 0x147E88: cmd_init (in /bin/bash)
+   n0: 1024 0x138836: main (in /bin/bash)
+  n1: 1024 0x17735C: uwp_init (in /bin/bash)
+   n0: 1024 0x13883B: main (in /bin/bash)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 2970 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 770 in 7 places, all below massif's threshold (1.00%)
+ n2: 1389 0x18F151: xrealloc (in /bin/bash)
+  n2: 1040 0x155F69: ??? (in /bin/bash)
+   n1: 1040 0x136521: ??? (in /bin/bash)
+    n1: 1040 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1040 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1040 0x194ECC: ??? (in /bin/bash)
+       n1: 1040 0x195085: source_file (in /bin/bash)
+        n1: 1040 0x19F457: source_builtin (in /bin/bash)
+         n1: 1040 0x1354CD: ??? (in /bin/bash)
+          n1: 1040 0x1361F7: ??? (in /bin/bash)
+           n1: 1040 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1040 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1040 0x194ECC: ??? (in /bin/bash)
+              n1: 1040 0x195085: source_file (in /bin/bash)
+               n1: 1040 0x19F457: source_builtin (in /bin/bash)
+                n1: 1040 0x1354CD: ??? (in /bin/bash)
+                 n1: 1040 0x1361F7: ??? (in /bin/bash)
+                  n1: 1040 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1040 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1040 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1040 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 349 in 4 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=4709923
+mem_heap_B=80355
+mem_heap_extra_B=15597
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=4818599
+mem_heap_B=80846
+mem_heap_extra_B=15786
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=4940727
+mem_heap_B=81106
+mem_heap_extra_B=15910
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=5049567
+mem_heap_B=81945
+mem_heap_extra_B=16151
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=5174934
+mem_heap_B=81836
+mem_heap_extra_B=16132
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=5276014
+mem_heap_B=82527
+mem_heap_extra_B=16385
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=5408321
+mem_heap_B=82571
+mem_heap_extra_B=16445
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=5568554
+mem_heap_B=83122
+mem_heap_extra_B=16638
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=5762692
+mem_heap_B=83807
+mem_heap_extra_B=16841
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=5948266
+mem_heap_B=84300
+mem_heap_extra_B=17052
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=6131429
+mem_heap_B=84870
+mem_heap_extra_B=17282
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=6242169
+mem_heap_B=85515
+mem_heap_extra_B=17565
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=6392328
+mem_heap_B=78823
+mem_heap_extra_B=15921
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=6520707
+mem_heap_B=86278
+mem_heap_extra_B=18322
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=6634043
+mem_heap_B=86796
+mem_heap_extra_B=18556
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=6736818
+mem_heap_B=87460
+mem_heap_extra_B=18908
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=6871699
+mem_heap_B=88850
+mem_heap_extra_B=19206
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=6963963
+mem_heap_B=90344
+mem_heap_extra_B=19536
+mem_stacks_B=0
+heap_tree=detailed
+n5: 90344 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n14: 77147 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16896 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 512 in 2 places, all below massif's threshold (1.00%)
+  n0: 11183 in 94 places, all below massif's threshold (1.00%)
+  n4: 8588 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3348 in 18 places, all below massif's threshold (1.00%)
+   n1: 1952 0x136017: ??? (in /bin/bash)
+    n2: 1952 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1568 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1568 0x194ECC: ??? (in /bin/bash)
+       n1: 1568 0x195085: source_file (in /bin/bash)
+        n1: 1568 0x19F457: source_builtin (in /bin/bash)
+         n1: 1568 0x1354CD: ??? (in /bin/bash)
+          n1: 1568 0x1361F7: ??? (in /bin/bash)
+           n2: 1568 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1536 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1536 0x194ECC: ??? (in /bin/bash)
+              n1: 1536 0x195085: source_file (in /bin/bash)
+               n1: 1536 0x19F457: source_builtin (in /bin/bash)
+                n1: 1536 0x1354CD: ??? (in /bin/bash)
+                 n1: 1536 0x1361F7: ??? (in /bin/bash)
+                  n2: 1536 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1120 0x1958F6: parse_and_execute (in /bin/bash)
+                    n1: 1120 0x194ECC: ??? (in /bin/bash)
+                     n1: 1120 0x195085: source_file (in /bin/bash)
+                      n1: 1120 0x19F457: source_builtin (in /bin/bash)
+                       n1: 1120 0x1354CD: ??? (in /bin/bash)
+                        n1: 1120 0x1361F7: ??? (in /bin/bash)
+                         n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+                          n1: 1120 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 1120 0x13A272: reader_loop (in /bin/bash)
+                            n0: 1120 0x138C8D: main (in /bin/bash)
+                   n0: 416 in 1 place, below massif's threshold (1.00%)
+            n0: 32 in 1 place, below massif's threshold (1.00%)
+     n0: 384 in 2 places, all below massif's threshold (1.00%)
+   n1: 1920 0x136028: ??? (in /bin/bash)
+    n2: 1920 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1536 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1536 0x194ECC: ??? (in /bin/bash)
+       n1: 1536 0x195085: source_file (in /bin/bash)
+        n1: 1536 0x19F457: source_builtin (in /bin/bash)
+         n1: 1536 0x1354CD: ??? (in /bin/bash)
+          n1: 1536 0x1361F7: ??? (in /bin/bash)
+           n2: 1536 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1504 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1504 0x194ECC: ??? (in /bin/bash)
+              n1: 1504 0x195085: source_file (in /bin/bash)
+               n1: 1504 0x19F457: source_builtin (in /bin/bash)
+                n1: 1504 0x1354CD: ??? (in /bin/bash)
+                 n1: 1504 0x1361F7: ??? (in /bin/bash)
+                  n2: 1504 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1120 0x1958F6: parse_and_execute (in /bin/bash)
+                    n1: 1120 0x194ECC: ??? (in /bin/bash)
+                     n1: 1120 0x195085: source_file (in /bin/bash)
+                      n1: 1120 0x19F457: source_builtin (in /bin/bash)
+                       n1: 1120 0x1354CD: ??? (in /bin/bash)
+                        n1: 1120 0x1361F7: ??? (in /bin/bash)
+                         n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+                          n1: 1120 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 1120 0x13A272: reader_loop (in /bin/bash)
+                            n0: 1120 0x138C8D: main (in /bin/bash)
+                   n0: 384 in 1 place, below massif's threshold (1.00%)
+            n0: 32 in 1 place, below massif's threshold (1.00%)
+     n0: 384 in 2 places, all below massif's threshold (1.00%)
+   n2: 1368 0x19510A: ??? (in /bin/bash)
+    n1: 1140 0x195467: parse_and_execute (in /bin/bash)
+     n0: 1140 in 2 places, all below massif's threshold (1.00%)
+    n0: 228 in 1 place, below massif's threshold (1.00%)
+  n1: 7296 0x151551: ??? (in /bin/bash)
+   n2: 7296 0x1549CD: ??? (in /bin/bash)
+    n3: 6768 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n2: 1296 0x16ABCC: ??? (in /bin/bash)
+      n1: 1152 0x16AE68: do_assignment_no_expand (in /bin/bash)
+       n1: 1152 0x19EF2A: set_or_show_attributes (in /bin/bash)
+        n1: 1152 0x1354CD: ??? (in /bin/bash)
+         n1: 1152 0x1361F7: ??? (in /bin/bash)
+          n1: 1152 0x14E0D6: execute_command_internal (in /bin/bash)
+           n1: 1152 0x1958F6: parse_and_execute (in /bin/bash)
+            n1: 1152 0x194ECC: ??? (in /bin/bash)
+             n1: 1152 0x195085: source_file (in /bin/bash)
+              n1: 1152 0x19F457: source_builtin (in /bin/bash)
+               n1: 1152 0x1354CD: ??? (in /bin/bash)
+                n1: 1152 0x1361F7: ??? (in /bin/bash)
+                 n1: 1152 0x14E0D6: execute_command_internal (in /bin/bash)
+                  n1: 1152 0x1958F6: parse_and_execute (in /bin/bash)
+                   n1: 1152 0x194ECC: ??? (in /bin/bash)
+                    n1: 1152 0x195085: source_file (in /bin/bash)
+                     n1: 1152 0x19F457: source_builtin (in /bin/bash)
+                      n1: 1152 0x1354CD: ??? (in /bin/bash)
+                       n1: 1152 0x1361F7: ??? (in /bin/bash)
+                        n1: 1152 0x14E0D6: execute_command_internal (in /bin/bash)
+                         n1: 1152 0x1958F6: parse_and_execute (in /bin/bash)
+                          n1: 1152 0x194ECC: ??? (in /bin/bash)
+                           n1: 1152 0x195085: source_file (in /bin/bash)
+                            n1: 1152 0x19F457: source_builtin (in /bin/bash)
+                             n1: 1152 0x1354CD: ??? (in /bin/bash)
+                              n0: 1152 0x1361F7: ??? (in /bin/bash)
+      n0: 144 in 1 place, below massif's threshold (1.00%)
+     n0: 1104 in 23 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n2: 4950 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4638 0x154A54: ??? (in /bin/bash)
+    n1: 3489 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3489 0x134F7C: ??? (in /bin/bash)
+      n0: 3489 0x1386EF: main (in /bin/bash)
+    n0: 1149 in 16 places, all below massif's threshold (1.00%)
+   n0: 312 in 1 place, below massif's threshold (1.00%)
+  n2: 4896 0x174063: hash_insert (in /bin/bash)
+   n2: 4864 0x154A06: ??? (in /bin/bash)
+    n2: 4512 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 1600 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+   n0: 32 in 1 place, below massif's threshold (1.00%)
+  n1: 4699 0x15220F: ??? (in /bin/bash)
+   n2: 4699 0x155F16: ??? (in /bin/bash)
+    n1: 4699 0x136521: ??? (in /bin/bash)
+     n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 4699 0x194ECC: ??? (in /bin/bash)
+        n1: 4699 0x195085: source_file (in /bin/bash)
+         n1: 4699 0x19F457: source_builtin (in /bin/bash)
+          n1: 4699 0x1354CD: ??? (in /bin/bash)
+           n1: 4699 0x1361F7: ??? (in /bin/bash)
+            n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 4699 0x194ECC: ??? (in /bin/bash)
+               n1: 4699 0x195085: source_file (in /bin/bash)
+                n1: 4699 0x19F457: source_builtin (in /bin/bash)
+                 n1: 4699 0x1354CD: ??? (in /bin/bash)
+                  n1: 4699 0x1361F7: ??? (in /bin/bash)
+                   n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 4699 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 4699 0x13A272: reader_loop (in /bin/bash)
+                      n0: 4699 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 4691 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4691 0x134F7C: ??? (in /bin/bash)
+    n0: 4691 0x1386EF: main (in /bin/bash)
+  n1: 3036 0x194DF4: ??? (in /bin/bash)
+   n1: 3036 0x195085: source_file (in /bin/bash)
+    n1: 3036 0x19F457: source_builtin (in /bin/bash)
+     n1: 3036 0x1354CD: ??? (in /bin/bash)
+      n1: 3036 0x1361F7: ??? (in /bin/bash)
+       n2: 3036 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n2: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 261 in 1 place, below massif's threshold (1.00%)
+  n1: 2406 0x151565: ??? (in /bin/bash)
+   n2: 2406 0x1549CD: ??? (in /bin/bash)
+    n2: 2289 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 1013 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 2406 0x1549EB: ??? (in /bin/bash)
+   n2: 2289 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 1013 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 2063 0x1523AD: ??? (in /bin/bash)
+   n2: 2063 0x155F16: ??? (in /bin/bash)
+    n1: 2063 0x136521: ??? (in /bin/bash)
+     n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 2063 0x194ECC: ??? (in /bin/bash)
+        n1: 2063 0x195085: source_file (in /bin/bash)
+         n1: 2063 0x19F457: source_builtin (in /bin/bash)
+          n1: 2063 0x1354CD: ??? (in /bin/bash)
+           n1: 2063 0x1361F7: ??? (in /bin/bash)
+            n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 2063 0x194ECC: ??? (in /bin/bash)
+               n1: 2063 0x195085: source_file (in /bin/bash)
+                n1: 2063 0x19F457: source_builtin (in /bin/bash)
+                 n1: 2063 0x1354CD: ??? (in /bin/bash)
+                  n1: 2063 0x1361F7: ??? (in /bin/bash)
+                   n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 2063 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 2063 0x13A272: reader_loop (in /bin/bash)
+                      n0: 2063 0x138C8D: main (in /bin/bash)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n1: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n0: 2048 in 2 places, all below massif's threshold (1.00%)
+  n1: 1989 0x152240: ??? (in /bin/bash)
+   n2: 1989 0x155F16: ??? (in /bin/bash)
+    n1: 1981 0x136521: ??? (in /bin/bash)
+     n1: 1981 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 1981 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 1981 0x194ECC: ??? (in /bin/bash)
+        n1: 1981 0x195085: source_file (in /bin/bash)
+         n1: 1981 0x19F457: source_builtin (in /bin/bash)
+          n1: 1981 0x1354CD: ??? (in /bin/bash)
+           n1: 1981 0x1361F7: ??? (in /bin/bash)
+            n1: 1981 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 1981 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 1981 0x194ECC: ??? (in /bin/bash)
+               n1: 1981 0x195085: source_file (in /bin/bash)
+                n1: 1981 0x19F457: source_builtin (in /bin/bash)
+                 n1: 1981 0x1354CD: ??? (in /bin/bash)
+                  n1: 1981 0x1361F7: ??? (in /bin/bash)
+                   n1: 1981 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 1981 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 1981 0x13A272: reader_loop (in /bin/bash)
+                      n0: 1981 0x138C8D: main (in /bin/bash)
+    n0: 8 in 1 place, below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 2970 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 770 in 7 places, all below massif's threshold (1.00%)
+ n2: 1539 0x18F151: xrealloc (in /bin/bash)
+  n2: 1224 0x155F69: ??? (in /bin/bash)
+   n1: 1224 0x136521: ??? (in /bin/bash)
+    n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1224 0x194ECC: ??? (in /bin/bash)
+       n1: 1224 0x195085: source_file (in /bin/bash)
+        n1: 1224 0x19F457: source_builtin (in /bin/bash)
+         n1: 1224 0x1354CD: ??? (in /bin/bash)
+          n1: 1224 0x1361F7: ??? (in /bin/bash)
+           n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1224 0x194ECC: ??? (in /bin/bash)
+              n1: 1224 0x195085: source_file (in /bin/bash)
+               n1: 1224 0x19F457: source_builtin (in /bin/bash)
+                n1: 1224 0x1354CD: ??? (in /bin/bash)
+                 n1: 1224 0x1361F7: ??? (in /bin/bash)
+                  n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1224 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1224 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1224 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 315 in 4 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=7151066
+mem_heap_B=90011
+mem_heap_extra_B=19589
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=7213573
+mem_heap_B=90813
+mem_heap_extra_B=20187
+mem_stacks_B=0
+heap_tree=detailed
+n5: 90813 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n14: 77671 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16896 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 512 in 2 places, all below massif's threshold (1.00%)
+  n0: 11906 in 94 places, all below massif's threshold (1.00%)
+  n4: 8068 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3216 in 18 places, all below massif's threshold (1.00%)
+   n1: 1856 0x136017: ??? (in /bin/bash)
+    n2: 1856 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1504 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1504 0x194ECC: ??? (in /bin/bash)
+       n1: 1504 0x195085: source_file (in /bin/bash)
+        n1: 1504 0x19F457: source_builtin (in /bin/bash)
+         n1: 1504 0x1354CD: ??? (in /bin/bash)
+          n1: 1504 0x1361F7: ??? (in /bin/bash)
+           n2: 1504 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1472 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1472 0x194ECC: ??? (in /bin/bash)
+              n1: 1472 0x195085: source_file (in /bin/bash)
+               n1: 1472 0x19F457: source_builtin (in /bin/bash)
+                n1: 1472 0x1354CD: ??? (in /bin/bash)
+                 n1: 1472 0x1361F7: ??? (in /bin/bash)
+                  n2: 1472 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1120 0x1958F6: parse_and_execute (in /bin/bash)
+                    n1: 1120 0x194ECC: ??? (in /bin/bash)
+                     n1: 1120 0x195085: source_file (in /bin/bash)
+                      n1: 1120 0x19F457: source_builtin (in /bin/bash)
+                       n1: 1120 0x1354CD: ??? (in /bin/bash)
+                        n1: 1120 0x1361F7: ??? (in /bin/bash)
+                         n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+                          n1: 1120 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 1120 0x13A272: reader_loop (in /bin/bash)
+                            n0: 1120 0x138C8D: main (in /bin/bash)
+                   n0: 352 in 1 place, below massif's threshold (1.00%)
+            n0: 32 in 1 place, below massif's threshold (1.00%)
+     n0: 352 in 2 places, all below massif's threshold (1.00%)
+   n1: 1856 0x136028: ??? (in /bin/bash)
+    n2: 1856 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1504 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1504 0x194ECC: ??? (in /bin/bash)
+       n1: 1504 0x195085: source_file (in /bin/bash)
+        n1: 1504 0x19F457: source_builtin (in /bin/bash)
+         n1: 1504 0x1354CD: ??? (in /bin/bash)
+          n1: 1504 0x1361F7: ??? (in /bin/bash)
+           n2: 1504 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1472 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1472 0x194ECC: ??? (in /bin/bash)
+              n1: 1472 0x195085: source_file (in /bin/bash)
+               n1: 1472 0x19F457: source_builtin (in /bin/bash)
+                n1: 1472 0x1354CD: ??? (in /bin/bash)
+                 n1: 1472 0x1361F7: ??? (in /bin/bash)
+                  n2: 1472 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1120 0x1958F6: parse_and_execute (in /bin/bash)
+                    n1: 1120 0x194ECC: ??? (in /bin/bash)
+                     n1: 1120 0x195085: source_file (in /bin/bash)
+                      n1: 1120 0x19F457: source_builtin (in /bin/bash)
+                       n1: 1120 0x1354CD: ??? (in /bin/bash)
+                        n1: 1120 0x1361F7: ??? (in /bin/bash)
+                         n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+                          n1: 1120 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 1120 0x13A272: reader_loop (in /bin/bash)
+                            n0: 1120 0x138C8D: main (in /bin/bash)
+                   n0: 352 in 1 place, below massif's threshold (1.00%)
+            n0: 32 in 1 place, below massif's threshold (1.00%)
+     n0: 352 in 2 places, all below massif's threshold (1.00%)
+   n1: 1140 0x19510A: ??? (in /bin/bash)
+    n0: 1140 in 2 places, all below massif's threshold (1.00%)
+  n1: 7344 0x151551: ??? (in /bin/bash)
+   n2: 7344 0x1549CD: ??? (in /bin/bash)
+    n3: 6816 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n1: 1344 0x16ABCC: ??? (in /bin/bash)
+      n0: 1344 in 2 places, all below massif's threshold (1.00%)
+     n0: 1104 in 23 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n2: 4939 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4655 0x154A54: ??? (in /bin/bash)
+    n1: 3489 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3489 0x134F7C: ??? (in /bin/bash)
+      n0: 3489 0x1386EF: main (in /bin/bash)
+    n0: 1166 in 16 places, all below massif's threshold (1.00%)
+   n0: 284 in 1 place, below massif's threshold (1.00%)
+  n2: 4928 0x174063: hash_insert (in /bin/bash)
+   n2: 4896 0x154A06: ??? (in /bin/bash)
+    n2: 4544 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 1632 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+   n0: 32 in 1 place, below massif's threshold (1.00%)
+  n1: 4699 0x15220F: ??? (in /bin/bash)
+   n2: 4699 0x155F16: ??? (in /bin/bash)
+    n1: 4699 0x136521: ??? (in /bin/bash)
+     n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 4699 0x194ECC: ??? (in /bin/bash)
+        n1: 4699 0x195085: source_file (in /bin/bash)
+         n1: 4699 0x19F457: source_builtin (in /bin/bash)
+          n1: 4699 0x1354CD: ??? (in /bin/bash)
+           n1: 4699 0x1361F7: ??? (in /bin/bash)
+            n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 4699 0x194ECC: ??? (in /bin/bash)
+               n1: 4699 0x195085: source_file (in /bin/bash)
+                n1: 4699 0x19F457: source_builtin (in /bin/bash)
+                 n1: 4699 0x1354CD: ??? (in /bin/bash)
+                  n1: 4699 0x1361F7: ??? (in /bin/bash)
+                   n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 4699 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 4699 0x13A272: reader_loop (in /bin/bash)
+                      n0: 4699 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 4691 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4691 0x134F7C: ??? (in /bin/bash)
+    n0: 4691 0x1386EF: main (in /bin/bash)
+  n1: 3329 0x194DF4: ??? (in /bin/bash)
+   n1: 3329 0x195085: source_file (in /bin/bash)
+    n1: 3329 0x19F457: source_builtin (in /bin/bash)
+     n1: 3329 0x1354CD: ??? (in /bin/bash)
+      n1: 3329 0x1361F7: ??? (in /bin/bash)
+       n2: 3329 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n2: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 554 in 2 places, all below massif's threshold (1.00%)
+  n1: 2413 0x151565: ??? (in /bin/bash)
+   n2: 2413 0x1549CD: ??? (in /bin/bash)
+    n2: 2296 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 1020 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 2413 0x1549EB: ??? (in /bin/bash)
+   n2: 2296 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 1020 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 2063 0x1523AD: ??? (in /bin/bash)
+   n2: 2063 0x155F16: ??? (in /bin/bash)
+    n1: 2063 0x136521: ??? (in /bin/bash)
+     n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 2063 0x194ECC: ??? (in /bin/bash)
+        n1: 2063 0x195085: source_file (in /bin/bash)
+         n1: 2063 0x19F457: source_builtin (in /bin/bash)
+          n1: 2063 0x1354CD: ??? (in /bin/bash)
+           n1: 2063 0x1361F7: ??? (in /bin/bash)
+            n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 2063 0x194ECC: ??? (in /bin/bash)
+               n1: 2063 0x195085: source_file (in /bin/bash)
+                n1: 2063 0x19F457: source_builtin (in /bin/bash)
+                 n1: 2063 0x1354CD: ??? (in /bin/bash)
+                  n1: 2063 0x1361F7: ??? (in /bin/bash)
+                   n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 2063 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 2063 0x13A272: reader_loop (in /bin/bash)
+                      n0: 2063 0x138C8D: main (in /bin/bash)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n1: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n0: 2048 in 2 places, all below massif's threshold (1.00%)
+  n1: 1934 0x152240: ??? (in /bin/bash)
+   n2: 1934 0x155F16: ??? (in /bin/bash)
+    n1: 1926 0x136521: ??? (in /bin/bash)
+     n1: 1926 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 1926 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 1926 0x194ECC: ??? (in /bin/bash)
+        n1: 1926 0x195085: source_file (in /bin/bash)
+         n1: 1926 0x19F457: source_builtin (in /bin/bash)
+          n1: 1926 0x1354CD: ??? (in /bin/bash)
+           n1: 1926 0x1361F7: ??? (in /bin/bash)
+            n1: 1926 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 1926 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 1926 0x194ECC: ??? (in /bin/bash)
+               n1: 1926 0x195085: source_file (in /bin/bash)
+                n1: 1926 0x19F457: source_builtin (in /bin/bash)
+                 n1: 1926 0x1354CD: ??? (in /bin/bash)
+                  n1: 1926 0x1361F7: ??? (in /bin/bash)
+                   n1: 1926 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 1926 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 1926 0x13A272: reader_loop (in /bin/bash)
+                      n0: 1926 0x138C8D: main (in /bin/bash)
+    n0: 8 in 1 place, below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 2970 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 770 in 7 places, all below massif's threshold (1.00%)
+ n2: 1484 0x18F151: xrealloc (in /bin/bash)
+  n2: 1224 0x155F69: ??? (in /bin/bash)
+   n1: 1224 0x136521: ??? (in /bin/bash)
+    n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1224 0x194ECC: ??? (in /bin/bash)
+       n1: 1224 0x195085: source_file (in /bin/bash)
+        n1: 1224 0x19F457: source_builtin (in /bin/bash)
+         n1: 1224 0x1354CD: ??? (in /bin/bash)
+          n1: 1224 0x1361F7: ??? (in /bin/bash)
+           n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1224 0x194ECC: ??? (in /bin/bash)
+              n1: 1224 0x195085: source_file (in /bin/bash)
+               n1: 1224 0x19F457: source_builtin (in /bin/bash)
+                n1: 1224 0x1354CD: ??? (in /bin/bash)
+                 n1: 1224 0x1361F7: ??? (in /bin/bash)
+                  n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1224 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1224 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1224 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 260 in 4 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=51
+#-----------
+time=7294926
+mem_heap_B=87932
+mem_heap_extra_B=19084
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=7376061
+mem_heap_B=89506
+mem_heap_extra_B=19510
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=7470419
+mem_heap_B=88973
+mem_heap_extra_B=19307
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=7561303
+mem_heap_B=88634
+mem_heap_extra_B=19278
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=7648408
+mem_heap_B=89712
+mem_heap_extra_B=19520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=7729600
+mem_heap_B=89810
+mem_heap_extra_B=19534
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=7810640
+mem_heap_B=87501
+mem_heap_extra_B=18867
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=7892587
+mem_heap_B=88896
+mem_heap_extra_B=19336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=7988574
+mem_heap_B=88429
+mem_heap_extra_B=19171
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=8079440
+mem_heap_B=88286
+mem_heap_extra_B=19170
+mem_stacks_B=0
+heap_tree=detailed
+n5: 88286 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n14: 75009 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16896 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 512 in 2 places, all below massif's threshold (1.00%)
+  n0: 10880 in 100 places, all below massif's threshold (1.00%)
+  n4: 7652 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 2992 in 18 places, all below massif's threshold (1.00%)
+   n1: 1760 0x136017: ??? (in /bin/bash)
+    n2: 1760 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1472 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1472 0x194ECC: ??? (in /bin/bash)
+       n1: 1472 0x195085: source_file (in /bin/bash)
+        n1: 1472 0x19F457: source_builtin (in /bin/bash)
+         n1: 1472 0x1354CD: ??? (in /bin/bash)
+          n1: 1472 0x1361F7: ??? (in /bin/bash)
+           n2: 1472 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1440 0x194ECC: ??? (in /bin/bash)
+              n1: 1440 0x195085: source_file (in /bin/bash)
+               n1: 1440 0x19F457: source_builtin (in /bin/bash)
+                n1: 1440 0x1354CD: ??? (in /bin/bash)
+                 n1: 1440 0x1361F7: ??? (in /bin/bash)
+                  n2: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1120 0x1958F6: parse_and_execute (in /bin/bash)
+                    n1: 1120 0x194ECC: ??? (in /bin/bash)
+                     n1: 1120 0x195085: source_file (in /bin/bash)
+                      n1: 1120 0x19F457: source_builtin (in /bin/bash)
+                       n1: 1120 0x1354CD: ??? (in /bin/bash)
+                        n1: 1120 0x1361F7: ??? (in /bin/bash)
+                         n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+                          n1: 1120 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 1120 0x13A272: reader_loop (in /bin/bash)
+                            n0: 1120 0x138C8D: main (in /bin/bash)
+                   n0: 320 in 1 place, below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 288 in 2 places, all below massif's threshold (1.00%)
+   n1: 1760 0x136028: ??? (in /bin/bash)
+    n2: 1760 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1440 0x194ECC: ??? (in /bin/bash)
+       n1: 1440 0x195085: source_file (in /bin/bash)
+        n1: 1440 0x19F457: source_builtin (in /bin/bash)
+         n1: 1440 0x1354CD: ??? (in /bin/bash)
+          n1: 1440 0x1361F7: ??? (in /bin/bash)
+           n2: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1408 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1408 0x194ECC: ??? (in /bin/bash)
+              n1: 1408 0x195085: source_file (in /bin/bash)
+               n1: 1408 0x19F457: source_builtin (in /bin/bash)
+                n1: 1408 0x1354CD: ??? (in /bin/bash)
+                 n1: 1408 0x1361F7: ??? (in /bin/bash)
+                  n2: 1408 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1120 0x1958F6: parse_and_execute (in /bin/bash)
+                    n1: 1120 0x194ECC: ??? (in /bin/bash)
+                     n1: 1120 0x195085: source_file (in /bin/bash)
+                      n1: 1120 0x19F457: source_builtin (in /bin/bash)
+                       n1: 1120 0x1354CD: ??? (in /bin/bash)
+                        n1: 1120 0x1361F7: ??? (in /bin/bash)
+                         n1: 1120 0x14E0D6: execute_command_internal (in /bin/bash)
+                          n1: 1120 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 1120 0x13A272: reader_loop (in /bin/bash)
+                            n0: 1120 0x138C8D: main (in /bin/bash)
+                   n0: 288 in 1 place, below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 320 in 2 places, all below massif's threshold (1.00%)
+   n1: 1140 0x19510A: ??? (in /bin/bash)
+    n0: 1140 in 2 places, all below massif's threshold (1.00%)
+  n1: 7152 0x151551: ??? (in /bin/bash)
+   n2: 7152 0x1549CD: ??? (in /bin/bash)
+    n3: 6624 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n1: 1152 0x16ABCC: ??? (in /bin/bash)
+      n0: 1152 in 2 places, all below massif's threshold (1.00%)
+     n0: 1104 in 23 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n2: 4854 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4400 0x154A54: ??? (in /bin/bash)
+    n1: 3456 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3456 0x134F7C: ??? (in /bin/bash)
+      n0: 3456 0x1386EF: main (in /bin/bash)
+    n0: 944 in 16 places, all below massif's threshold (1.00%)
+   n0: 454 in 1 place, below massif's threshold (1.00%)
+  n2: 4800 0x174063: hash_insert (in /bin/bash)
+   n2: 4768 0x154A06: ??? (in /bin/bash)
+    n2: 4416 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 1504 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+   n0: 32 in 1 place, below massif's threshold (1.00%)
+  n1: 4699 0x15220F: ??? (in /bin/bash)
+   n2: 4699 0x155F16: ??? (in /bin/bash)
+    n1: 4699 0x136521: ??? (in /bin/bash)
+     n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 4699 0x194ECC: ??? (in /bin/bash)
+        n1: 4699 0x195085: source_file (in /bin/bash)
+         n1: 4699 0x19F457: source_builtin (in /bin/bash)
+          n1: 4699 0x1354CD: ??? (in /bin/bash)
+           n1: 4699 0x1361F7: ??? (in /bin/bash)
+            n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 4699 0x194ECC: ??? (in /bin/bash)
+               n1: 4699 0x195085: source_file (in /bin/bash)
+                n1: 4699 0x19F457: source_builtin (in /bin/bash)
+                 n1: 4699 0x1354CD: ??? (in /bin/bash)
+                  n1: 4699 0x1361F7: ??? (in /bin/bash)
+                   n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 4699 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 4699 0x13A272: reader_loop (in /bin/bash)
+                      n0: 4699 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 4635 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4635 0x134F7C: ??? (in /bin/bash)
+    n0: 4635 0x1386EF: main (in /bin/bash)
+  n1: 3036 0x194DF4: ??? (in /bin/bash)
+   n1: 3036 0x195085: source_file (in /bin/bash)
+    n1: 3036 0x19F457: source_builtin (in /bin/bash)
+     n1: 3036 0x1354CD: ??? (in /bin/bash)
+      n1: 3036 0x1361F7: ??? (in /bin/bash)
+       n2: 3036 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n2: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 261 in 2 places, all below massif's threshold (1.00%)
+  n1: 2293 0x151565: ??? (in /bin/bash)
+   n2: 2293 0x1549CD: ??? (in /bin/bash)
+    n2: 2176 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 900 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 2293 0x1549EB: ??? (in /bin/bash)
+   n2: 2176 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 900 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 2063 0x1523AD: ??? (in /bin/bash)
+   n2: 2063 0x155F16: ??? (in /bin/bash)
+    n1: 2063 0x136521: ??? (in /bin/bash)
+     n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 2063 0x194ECC: ??? (in /bin/bash)
+        n1: 2063 0x195085: source_file (in /bin/bash)
+         n1: 2063 0x19F457: source_builtin (in /bin/bash)
+          n1: 2063 0x1354CD: ??? (in /bin/bash)
+           n1: 2063 0x1361F7: ??? (in /bin/bash)
+            n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 2063 0x194ECC: ??? (in /bin/bash)
+               n1: 2063 0x195085: source_file (in /bin/bash)
+                n1: 2063 0x19F457: source_builtin (in /bin/bash)
+                 n1: 2063 0x1354CD: ??? (in /bin/bash)
+                  n1: 2063 0x1361F7: ??? (in /bin/bash)
+                   n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 2063 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 2063 0x13A272: reader_loop (in /bin/bash)
+                      n0: 2063 0x138C8D: main (in /bin/bash)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n1: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n0: 2048 in 2 places, all below massif's threshold (1.00%)
+  n1: 1708 0x152240: ??? (in /bin/bash)
+   n2: 1708 0x155F16: ??? (in /bin/bash)
+    n1: 1700 0x136521: ??? (in /bin/bash)
+     n1: 1700 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 1700 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 1700 0x194ECC: ??? (in /bin/bash)
+        n1: 1700 0x195085: source_file (in /bin/bash)
+         n1: 1700 0x19F457: source_builtin (in /bin/bash)
+          n1: 1700 0x1354CD: ??? (in /bin/bash)
+           n1: 1700 0x1361F7: ??? (in /bin/bash)
+            n1: 1700 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 1700 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 1700 0x194ECC: ??? (in /bin/bash)
+               n1: 1700 0x195085: source_file (in /bin/bash)
+                n1: 1700 0x19F457: source_builtin (in /bin/bash)
+                 n1: 1700 0x1354CD: ??? (in /bin/bash)
+                  n1: 1700 0x1361F7: ??? (in /bin/bash)
+                   n1: 1700 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 1700 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 1700 0x13A272: reader_loop (in /bin/bash)
+                      n0: 1700 0x138C8D: main (in /bin/bash)
+    n0: 8 in 1 place, below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 3050 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 850 in 8 places, all below massif's threshold (1.00%)
+ n2: 1539 0x18F151: xrealloc (in /bin/bash)
+  n2: 1224 0x155F69: ??? (in /bin/bash)
+   n1: 1224 0x136521: ??? (in /bin/bash)
+    n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1224 0x194ECC: ??? (in /bin/bash)
+       n1: 1224 0x195085: source_file (in /bin/bash)
+        n1: 1224 0x19F457: source_builtin (in /bin/bash)
+         n1: 1224 0x1354CD: ??? (in /bin/bash)
+          n1: 1224 0x1361F7: ??? (in /bin/bash)
+           n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1224 0x194ECC: ??? (in /bin/bash)
+              n1: 1224 0x195085: source_file (in /bin/bash)
+               n1: 1224 0x19F457: source_builtin (in /bin/bash)
+                n1: 1224 0x1354CD: ??? (in /bin/bash)
+                 n1: 1224 0x1361F7: ??? (in /bin/bash)
+                  n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1224 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1224 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1224 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 315 in 4 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=8169165
+mem_heap_B=90031
+mem_heap_extra_B=19305
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=8255863
+mem_heap_B=90123
+mem_heap_extra_B=19373
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=8347347
+mem_heap_B=90307
+mem_heap_extra_B=19317
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=8428565
+mem_heap_B=90441
+mem_heap_extra_B=19375
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=8509666
+mem_heap_B=90601
+mem_heap_extra_B=19343
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=8596341
+mem_heap_B=90770
+mem_heap_extra_B=19366
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=8645614
+mem_heap_B=97854
+mem_heap_extra_B=19802
+mem_stacks_B=0
+heap_tree=detailed
+n5: 97854 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n14: 82721 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16896 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 512 in 2 places, all below massif's threshold (1.00%)
+  n0: 16712 in 101 places, all below massif's threshold (1.00%)
+  n4: 8616 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3600 in 18 places, all below massif's threshold (1.00%)
+   n1: 1824 0x136017: ??? (in /bin/bash)
+    n2: 1824 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1472 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1472 0x194ECC: ??? (in /bin/bash)
+       n1: 1472 0x195085: source_file (in /bin/bash)
+        n1: 1472 0x19F457: source_builtin (in /bin/bash)
+         n1: 1472 0x1354CD: ??? (in /bin/bash)
+          n1: 1472 0x1361F7: ??? (in /bin/bash)
+           n2: 1472 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1440 0x194ECC: ??? (in /bin/bash)
+              n1: 1440 0x195085: source_file (in /bin/bash)
+               n1: 1440 0x19F457: source_builtin (in /bin/bash)
+                n1: 1440 0x1354CD: ??? (in /bin/bash)
+                 n1: 1440 0x1361F7: ??? (in /bin/bash)
+                  n1: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n0: 1440 in 2 places, all below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 352 in 2 places, all below massif's threshold (1.00%)
+   n1: 1824 0x136028: ??? (in /bin/bash)
+    n2: 1824 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1440 0x194ECC: ??? (in /bin/bash)
+       n1: 1440 0x195085: source_file (in /bin/bash)
+        n1: 1440 0x19F457: source_builtin (in /bin/bash)
+         n1: 1440 0x1354CD: ??? (in /bin/bash)
+          n1: 1440 0x1361F7: ??? (in /bin/bash)
+           n2: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1408 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1408 0x194ECC: ??? (in /bin/bash)
+              n1: 1408 0x195085: source_file (in /bin/bash)
+               n1: 1408 0x19F457: source_builtin (in /bin/bash)
+                n1: 1408 0x1354CD: ??? (in /bin/bash)
+                 n1: 1408 0x1361F7: ??? (in /bin/bash)
+                  n1: 1408 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n0: 1408 in 2 places, all below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 384 in 2 places, all below massif's threshold (1.00%)
+   n1: 1368 0x19510A: ??? (in /bin/bash)
+    n0: 1368 in 2 places, all below massif's threshold (1.00%)
+  n1: 7152 0x151551: ??? (in /bin/bash)
+   n2: 7152 0x1549CD: ??? (in /bin/bash)
+    n2: 6624 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 2256 in 24 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n2: 4800 0x174063: hash_insert (in /bin/bash)
+   n2: 4768 0x154A06: ??? (in /bin/bash)
+    n2: 4416 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 1504 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+   n0: 32 in 1 place, below massif's threshold (1.00%)
+  n2: 4796 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4400 0x154A54: ??? (in /bin/bash)
+    n1: 3456 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3456 0x134F7C: ??? (in /bin/bash)
+      n0: 3456 0x1386EF: main (in /bin/bash)
+    n0: 944 in 16 places, all below massif's threshold (1.00%)
+   n0: 396 in 1 place, below massif's threshold (1.00%)
+  n1: 4699 0x15220F: ??? (in /bin/bash)
+   n2: 4699 0x155F16: ??? (in /bin/bash)
+    n1: 4699 0x136521: ??? (in /bin/bash)
+     n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 4699 0x194ECC: ??? (in /bin/bash)
+        n1: 4699 0x195085: source_file (in /bin/bash)
+         n1: 4699 0x19F457: source_builtin (in /bin/bash)
+          n1: 4699 0x1354CD: ??? (in /bin/bash)
+           n1: 4699 0x1361F7: ??? (in /bin/bash)
+            n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 4699 0x194ECC: ??? (in /bin/bash)
+               n1: 4699 0x195085: source_file (in /bin/bash)
+                n1: 4699 0x19F457: source_builtin (in /bin/bash)
+                 n1: 4699 0x1354CD: ??? (in /bin/bash)
+                  n1: 4699 0x1361F7: ??? (in /bin/bash)
+                   n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 4699 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 4699 0x13A272: reader_loop (in /bin/bash)
+                      n0: 4699 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 4635 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4635 0x134F7C: ??? (in /bin/bash)
+    n0: 4635 0x1386EF: main (in /bin/bash)
+  n1: 4089 0x194DF4: ??? (in /bin/bash)
+   n1: 4089 0x195085: source_file (in /bin/bash)
+    n1: 4089 0x19F457: source_builtin (in /bin/bash)
+     n1: 4089 0x1354CD: ??? (in /bin/bash)
+      n1: 4089 0x1361F7: ??? (in /bin/bash)
+       n2: 4089 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n2: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 1314 in 2 places, all below massif's threshold (1.00%)
+  n1: 2281 0x151565: ??? (in /bin/bash)
+   n2: 2281 0x1549CD: ??? (in /bin/bash)
+    n2: 2164 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 888 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 2281 0x1549EB: ??? (in /bin/bash)
+   n2: 2164 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 888 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 2063 0x1523AD: ??? (in /bin/bash)
+   n2: 2063 0x155F16: ??? (in /bin/bash)
+    n1: 2063 0x136521: ??? (in /bin/bash)
+     n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 2063 0x194ECC: ??? (in /bin/bash)
+        n1: 2063 0x195085: source_file (in /bin/bash)
+         n1: 2063 0x19F457: source_builtin (in /bin/bash)
+          n1: 2063 0x1354CD: ??? (in /bin/bash)
+           n1: 2063 0x1361F7: ??? (in /bin/bash)
+            n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 2063 0x194ECC: ??? (in /bin/bash)
+               n1: 2063 0x195085: source_file (in /bin/bash)
+                n1: 2063 0x19F457: source_builtin (in /bin/bash)
+                 n1: 2063 0x1354CD: ??? (in /bin/bash)
+                  n1: 2063 0x1361F7: ??? (in /bin/bash)
+                   n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 2063 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 2063 0x13A272: reader_loop (in /bin/bash)
+                      n0: 2063 0x138C8D: main (in /bin/bash)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n1: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n0: 2048 in 2 places, all below massif's threshold (1.00%)
+  n1: 1653 0x152240: ??? (in /bin/bash)
+   n2: 1653 0x155F16: ??? (in /bin/bash)
+    n1: 1645 0x136521: ??? (in /bin/bash)
+     n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 1645 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 1645 0x194ECC: ??? (in /bin/bash)
+        n1: 1645 0x195085: source_file (in /bin/bash)
+         n1: 1645 0x19F457: source_builtin (in /bin/bash)
+          n1: 1645 0x1354CD: ??? (in /bin/bash)
+           n1: 1645 0x1361F7: ??? (in /bin/bash)
+            n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 1645 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 1645 0x194ECC: ??? (in /bin/bash)
+               n1: 1645 0x195085: source_file (in /bin/bash)
+                n1: 1645 0x19F457: source_builtin (in /bin/bash)
+                 n1: 1645 0x1354CD: ??? (in /bin/bash)
+                  n1: 1645 0x1361F7: ??? (in /bin/bash)
+                   n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 1645 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 1645 0x13A272: reader_loop (in /bin/bash)
+                      n0: 1645 0x138C8D: main (in /bin/bash)
+    n0: 8 in 1 place, below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 3306 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 1106 in 8 places, all below massif's threshold (1.00%)
+ n2: 3139 0x18F151: xrealloc (in /bin/bash)
+  n0: 1915 in 6 places, all below massif's threshold (1.00%)
+  n2: 1224 0x155F69: ??? (in /bin/bash)
+   n1: 1224 0x136521: ??? (in /bin/bash)
+    n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1224 0x194ECC: ??? (in /bin/bash)
+       n1: 1224 0x195085: source_file (in /bin/bash)
+        n1: 1224 0x19F457: source_builtin (in /bin/bash)
+         n1: 1224 0x1354CD: ??? (in /bin/bash)
+          n1: 1224 0x1361F7: ??? (in /bin/bash)
+           n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1224 0x194ECC: ??? (in /bin/bash)
+              n1: 1224 0x195085: source_file (in /bin/bash)
+               n1: 1224 0x19F457: source_builtin (in /bin/bash)
+                n1: 1224 0x1354CD: ??? (in /bin/bash)
+                 n1: 1224 0x1361F7: ??? (in /bin/bash)
+                  n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1224 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1224 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1224 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=8677254
+mem_heap_B=99068
+mem_heap_extra_B=19812
+mem_stacks_B=0
+heap_tree=detailed
+n5: 99068 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n14: 82717 0x18F0EC: xmalloc (in /bin/bash)
+  n4: 16896 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 512 in 2 places, all below massif's threshold (1.00%)
+  n0: 16708 in 101 places, all below massif's threshold (1.00%)
+  n4: 8616 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3600 in 18 places, all below massif's threshold (1.00%)
+   n1: 1824 0x136017: ??? (in /bin/bash)
+    n2: 1824 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1472 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1472 0x194ECC: ??? (in /bin/bash)
+       n1: 1472 0x195085: source_file (in /bin/bash)
+        n1: 1472 0x19F457: source_builtin (in /bin/bash)
+         n1: 1472 0x1354CD: ??? (in /bin/bash)
+          n1: 1472 0x1361F7: ??? (in /bin/bash)
+           n2: 1472 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1440 0x194ECC: ??? (in /bin/bash)
+              n1: 1440 0x195085: source_file (in /bin/bash)
+               n1: 1440 0x19F457: source_builtin (in /bin/bash)
+                n1: 1440 0x1354CD: ??? (in /bin/bash)
+                 n1: 1440 0x1361F7: ??? (in /bin/bash)
+                  n1: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n0: 1440 in 2 places, all below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 352 in 2 places, all below massif's threshold (1.00%)
+   n1: 1824 0x136028: ??? (in /bin/bash)
+    n2: 1824 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1440 0x194ECC: ??? (in /bin/bash)
+       n1: 1440 0x195085: source_file (in /bin/bash)
+        n1: 1440 0x19F457: source_builtin (in /bin/bash)
+         n1: 1440 0x1354CD: ??? (in /bin/bash)
+          n1: 1440 0x1361F7: ??? (in /bin/bash)
+           n2: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1408 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1408 0x194ECC: ??? (in /bin/bash)
+              n1: 1408 0x195085: source_file (in /bin/bash)
+               n1: 1408 0x19F457: source_builtin (in /bin/bash)
+                n1: 1408 0x1354CD: ??? (in /bin/bash)
+                 n1: 1408 0x1361F7: ??? (in /bin/bash)
+                  n1: 1408 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n0: 1408 in 2 places, all below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 384 in 2 places, all below massif's threshold (1.00%)
+   n1: 1368 0x19510A: ??? (in /bin/bash)
+    n0: 1368 in 2 places, all below massif's threshold (1.00%)
+  n1: 7152 0x151551: ??? (in /bin/bash)
+   n2: 7152 0x1549CD: ??? (in /bin/bash)
+    n2: 6624 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 2256 in 24 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n2: 4800 0x174063: hash_insert (in /bin/bash)
+   n2: 4768 0x154A06: ??? (in /bin/bash)
+    n2: 4416 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 1504 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+   n0: 32 in 1 place, below massif's threshold (1.00%)
+  n2: 4796 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4400 0x154A54: ??? (in /bin/bash)
+    n1: 3456 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3456 0x134F7C: ??? (in /bin/bash)
+      n0: 3456 0x1386EF: main (in /bin/bash)
+    n0: 944 in 16 places, all below massif's threshold (1.00%)
+   n0: 396 in 1 place, below massif's threshold (1.00%)
+  n1: 4699 0x15220F: ??? (in /bin/bash)
+   n2: 4699 0x155F16: ??? (in /bin/bash)
+    n1: 4699 0x136521: ??? (in /bin/bash)
+     n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 4699 0x194ECC: ??? (in /bin/bash)
+        n1: 4699 0x195085: source_file (in /bin/bash)
+         n1: 4699 0x19F457: source_builtin (in /bin/bash)
+          n1: 4699 0x1354CD: ??? (in /bin/bash)
+           n1: 4699 0x1361F7: ??? (in /bin/bash)
+            n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 4699 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 4699 0x194ECC: ??? (in /bin/bash)
+               n1: 4699 0x195085: source_file (in /bin/bash)
+                n1: 4699 0x19F457: source_builtin (in /bin/bash)
+                 n1: 4699 0x1354CD: ??? (in /bin/bash)
+                  n1: 4699 0x1361F7: ??? (in /bin/bash)
+                   n1: 4699 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 4699 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 4699 0x13A272: reader_loop (in /bin/bash)
+                      n0: 4699 0x138C8D: main (in /bin/bash)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n1: 4635 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4635 0x134F7C: ??? (in /bin/bash)
+    n0: 4635 0x1386EF: main (in /bin/bash)
+  n1: 4089 0x194DF4: ??? (in /bin/bash)
+   n1: 4089 0x195085: source_file (in /bin/bash)
+    n1: 4089 0x19F457: source_builtin (in /bin/bash)
+     n1: 4089 0x1354CD: ??? (in /bin/bash)
+      n1: 4089 0x1361F7: ??? (in /bin/bash)
+       n2: 4089 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n2: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 1314 in 2 places, all below massif's threshold (1.00%)
+  n1: 2281 0x151565: ??? (in /bin/bash)
+   n2: 2281 0x1549CD: ??? (in /bin/bash)
+    n2: 2164 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 888 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 2281 0x1549EB: ??? (in /bin/bash)
+   n2: 2164 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 888 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 2063 0x1523AD: ??? (in /bin/bash)
+   n2: 2063 0x155F16: ??? (in /bin/bash)
+    n1: 2063 0x136521: ??? (in /bin/bash)
+     n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 2063 0x194ECC: ??? (in /bin/bash)
+        n1: 2063 0x195085: source_file (in /bin/bash)
+         n1: 2063 0x19F457: source_builtin (in /bin/bash)
+          n1: 2063 0x1354CD: ??? (in /bin/bash)
+           n1: 2063 0x1361F7: ??? (in /bin/bash)
+            n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 2063 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 2063 0x194ECC: ??? (in /bin/bash)
+               n1: 2063 0x195085: source_file (in /bin/bash)
+                n1: 2063 0x19F457: source_builtin (in /bin/bash)
+                 n1: 2063 0x1354CD: ??? (in /bin/bash)
+                  n1: 2063 0x1361F7: ??? (in /bin/bash)
+                   n1: 2063 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 2063 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 2063 0x13A272: reader_loop (in /bin/bash)
+                      n0: 2063 0x138C8D: main (in /bin/bash)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n1: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n0: 2048 in 2 places, all below massif's threshold (1.00%)
+  n1: 1653 0x152240: ??? (in /bin/bash)
+   n2: 1653 0x155F16: ??? (in /bin/bash)
+    n1: 1645 0x136521: ??? (in /bin/bash)
+     n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 1645 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 1645 0x194ECC: ??? (in /bin/bash)
+        n1: 1645 0x195085: source_file (in /bin/bash)
+         n1: 1645 0x19F457: source_builtin (in /bin/bash)
+          n1: 1645 0x1354CD: ??? (in /bin/bash)
+           n1: 1645 0x1361F7: ??? (in /bin/bash)
+            n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 1645 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 1645 0x194ECC: ??? (in /bin/bash)
+               n1: 1645 0x195085: source_file (in /bin/bash)
+                n1: 1645 0x19F457: source_builtin (in /bin/bash)
+                 n1: 1645 0x1354CD: ??? (in /bin/bash)
+                  n1: 1645 0x1361F7: ??? (in /bin/bash)
+                   n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 1645 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 1645 0x13A272: reader_loop (in /bin/bash)
+                      n0: 1645 0x138C8D: main (in /bin/bash)
+    n0: 8 in 1 place, below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 4357 0x18F151: xrealloc (in /bin/bash)
+  n0: 3133 in 8 places, all below massif's threshold (1.00%)
+  n2: 1224 0x155F69: ??? (in /bin/bash)
+   n1: 1224 0x136521: ??? (in /bin/bash)
+    n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1224 0x194ECC: ??? (in /bin/bash)
+       n1: 1224 0x195085: source_file (in /bin/bash)
+        n1: 1224 0x19F457: source_builtin (in /bin/bash)
+         n1: 1224 0x1354CD: ??? (in /bin/bash)
+          n1: 1224 0x1361F7: ??? (in /bin/bash)
+           n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1224 0x194ECC: ??? (in /bin/bash)
+              n1: 1224 0x195085: source_file (in /bin/bash)
+               n1: 1224 0x19F457: source_builtin (in /bin/bash)
+                n1: 1224 0x1354CD: ??? (in /bin/bash)
+                 n1: 1224 0x1361F7: ??? (in /bin/bash)
+                  n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1224 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1224 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1224 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 3306 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 1106 in 10 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=69
+#-----------
+time=8775956
+mem_heap_B=91425
+mem_heap_extra_B=17679
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=8858832
+mem_heap_B=99980
+mem_heap_extra_B=20092
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=8859556
+mem_heap_B=100012
+mem_heap_extra_B=20116
+mem_stacks_B=0
+heap_tree=peak
+n5: 100012 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n13: 84413 0x18F0EC: xmalloc (in /bin/bash)
+  n0: 18274 in 105 places, all below massif's threshold (1.00%)
+  n4: 16896 0x173BAA: hash_create (in /bin/bash)
+   n1: 8192 0x154989: ??? (in /bin/bash)
+    n1: 8192 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 8192 0x134F7C: ??? (in /bin/bash)
+      n0: 8192 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x154950: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n1: 4096 0x1549A8: ??? (in /bin/bash)
+    n1: 4096 0x156D86: initialize_shell_variables (in /bin/bash)
+     n1: 4096 0x134F7C: ??? (in /bin/bash)
+      n0: 4096 0x1386EF: main (in /bin/bash)
+   n0: 512 in 2 places, all below massif's threshold (1.00%)
+  n4: 9132 0x177709: unwind_protect_mem (in /bin/bash)
+   n0: 3888 in 18 places, all below massif's threshold (1.00%)
+   n1: 1824 0x136017: ??? (in /bin/bash)
+    n2: 1824 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1472 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1472 0x194ECC: ??? (in /bin/bash)
+       n1: 1472 0x195085: source_file (in /bin/bash)
+        n1: 1472 0x19F457: source_builtin (in /bin/bash)
+         n1: 1472 0x1354CD: ??? (in /bin/bash)
+          n1: 1472 0x1361F7: ??? (in /bin/bash)
+           n2: 1472 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1440 0x194ECC: ??? (in /bin/bash)
+              n1: 1440 0x195085: source_file (in /bin/bash)
+               n1: 1440 0x19F457: source_builtin (in /bin/bash)
+                n1: 1440 0x1354CD: ??? (in /bin/bash)
+                 n1: 1440 0x1361F7: ??? (in /bin/bash)
+                  n1: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n0: 1440 in 2 places, all below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 352 in 2 places, all below massif's threshold (1.00%)
+   n1: 1824 0x136028: ??? (in /bin/bash)
+    n2: 1824 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1440 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1440 0x194ECC: ??? (in /bin/bash)
+       n1: 1440 0x195085: source_file (in /bin/bash)
+        n1: 1440 0x19F457: source_builtin (in /bin/bash)
+         n1: 1440 0x1354CD: ??? (in /bin/bash)
+          n1: 1440 0x1361F7: ??? (in /bin/bash)
+           n2: 1440 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1408 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1408 0x194ECC: ??? (in /bin/bash)
+              n1: 1408 0x195085: source_file (in /bin/bash)
+               n1: 1408 0x19F457: source_builtin (in /bin/bash)
+                n1: 1408 0x1354CD: ??? (in /bin/bash)
+                 n1: 1408 0x1361F7: ??? (in /bin/bash)
+                  n1: 1408 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n0: 1408 in 2 places, all below massif's threshold (1.00%)
+            n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 384 in 2 places, all below massif's threshold (1.00%)
+   n1: 1596 0x19510A: ??? (in /bin/bash)
+    n0: 1596 in 2 places, all below massif's threshold (1.00%)
+  n1: 7152 0x151551: ??? (in /bin/bash)
+   n2: 7152 0x1549CD: ??? (in /bin/bash)
+    n2: 6624 0x154A44: ??? (in /bin/bash)
+     n1: 4368 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 4368 0x134F7C: ??? (in /bin/bash)
+       n0: 4368 0x1386EF: main (in /bin/bash)
+     n0: 2256 in 24 places, all below massif's threshold (1.00%)
+    n0: 528 in 3 places, all below massif's threshold (1.00%)
+  n1: 6288 0x15220F: ??? (in /bin/bash)
+   n2: 6288 0x155F16: ??? (in /bin/bash)
+    n2: 6288 0x16992B: command_substitute (in /bin/bash)
+     n1: 6288 0x16E5D1: ??? (in /bin/bash)
+      n1: 6288 0x16F894: ??? (in /bin/bash)
+       n1: 6288 0x17137A: ??? (in /bin/bash)
+        n1: 6288 0x1714D8: expand_string_assignment (in /bin/bash)
+         n1: 6288 0x16A7BC: ??? (in /bin/bash)
+          n1: 6288 0x16ACA7: ??? (in /bin/bash)
+           n1: 6288 0x173238: ??? (in /bin/bash)
+            n1: 6288 0x135AA9: ??? (in /bin/bash)
+             n1: 6288 0x14E0D6: execute_command_internal (in /bin/bash)
+              n1: 6288 0x1958F6: parse_and_execute (in /bin/bash)
+               n1: 6288 0x194ECC: ??? (in /bin/bash)
+                n1: 6288 0x195085: source_file (in /bin/bash)
+                 n1: 6288 0x19F457: source_builtin (in /bin/bash)
+                  n1: 6288 0x1354CD: ??? (in /bin/bash)
+                   n1: 6288 0x1361F7: ??? (in /bin/bash)
+                    n2: 6288 0x14E0D6: execute_command_internal (in /bin/bash)
+                     n1: 6288 0x14E00A: execute_command_internal (in /bin/bash)
+                      n1: 6288 0x14FBF0: execute_command (in /bin/bash)
+                       n1: 6288 0x14DFD5: execute_command_internal (in /bin/bash)
+                        n1: 6288 0x14FBF0: execute_command (in /bin/bash)
+                         n1: 6288 0x14DFD5: execute_command_internal (in /bin/bash)
+                          n1: 6288 0x14FBF0: execute_command (in /bin/bash)
+                           n1: 6288 0x1368EF: ??? (in /bin/bash)
+                            n1: 6288 0x14E202: execute_command_internal (in /bin/bash)
+                             n1: 6288 0x1958F6: parse_and_execute (in /bin/bash)
+                              n0: 6288 0x194ECC: ??? (in /bin/bash)
+                     n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n2: 4832 0x174063: hash_insert (in /bin/bash)
+   n2: 4768 0x154A06: ??? (in /bin/bash)
+    n2: 4416 0x154A44: ??? (in /bin/bash)
+     n1: 2912 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 2912 0x134F7C: ??? (in /bin/bash)
+       n0: 2912 0x1386EF: main (in /bin/bash)
+     n0: 1504 in 24 places, all below massif's threshold (1.00%)
+    n0: 352 in 3 places, all below massif's threshold (1.00%)
+   n0: 64 in 1 place, below massif's threshold (1.00%)
+  n2: 4796 0x153A67: make_variable_value (in /bin/bash)
+   n2: 4359 0x154A54: ??? (in /bin/bash)
+    n1: 3456 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 3456 0x134F7C: ??? (in /bin/bash)
+      n0: 3456 0x1386EF: main (in /bin/bash)
+    n0: 903 in 16 places, all below massif's threshold (1.00%)
+   n0: 437 in 1 place, below massif's threshold (1.00%)
+  n1: 4635 0x157637: initialize_shell_variables (in /bin/bash)
+   n1: 4635 0x134F7C: ??? (in /bin/bash)
+    n0: 4635 0x1386EF: main (in /bin/bash)
+  n1: 4089 0x194DF4: ??? (in /bin/bash)
+   n1: 4089 0x195085: source_file (in /bin/bash)
+    n1: 4089 0x19F457: source_builtin (in /bin/bash)
+     n1: 4089 0x1354CD: ??? (in /bin/bash)
+      n1: 4089 0x1361F7: ??? (in /bin/bash)
+       n2: 4089 0x14E0D6: execute_command_internal (in /bin/bash)
+        n1: 2775 0x1958F6: parse_and_execute (in /bin/bash)
+         n1: 2775 0x194ECC: ??? (in /bin/bash)
+          n1: 2775 0x195085: source_file (in /bin/bash)
+           n1: 2775 0x19F457: source_builtin (in /bin/bash)
+            n1: 2775 0x1354CD: ??? (in /bin/bash)
+             n1: 2775 0x1361F7: ??? (in /bin/bash)
+              n2: 2775 0x14E0D6: execute_command_internal (in /bin/bash)
+               n1: 2775 0x14FBF0: execute_command (in /bin/bash)
+                n1: 2775 0x13A272: reader_loop (in /bin/bash)
+                 n0: 2775 0x138C8D: main (in /bin/bash)
+               n0: 0 in 1 place, below massif's threshold (1.00%)
+        n0: 1314 in 2 places, all below massif's threshold (1.00%)
+  n1: 2281 0x151565: ??? (in /bin/bash)
+   n2: 2281 0x1549CD: ??? (in /bin/bash)
+    n2: 2164 0x154A44: ??? (in /bin/bash)
+     n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+      n1: 1276 0x134F7C: ??? (in /bin/bash)
+       n0: 1276 0x1386EF: main (in /bin/bash)
+     n0: 888 in 24 places, all below massif's threshold (1.00%)
+    n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n2: 2281 0x1549EB: ??? (in /bin/bash)
+   n2: 2164 0x154A44: ??? (in /bin/bash)
+    n1: 1276 0x156E33: initialize_shell_variables (in /bin/bash)
+     n1: 1276 0x134F7C: ??? (in /bin/bash)
+      n0: 1276 0x1386EF: main (in /bin/bash)
+    n0: 888 in 24 places, all below massif's threshold (1.00%)
+   n0: 117 in 3 places, all below massif's threshold (1.00%)
+  n1: 2048 0x173B66: hash_create (in /bin/bash)
+   n1: 2048 0x155449: make_new_assoc_variable (in /bin/bash)
+    n0: 2048 in 2 places, all below massif's threshold (1.00%)
+  n1: 1709 0x152240: ??? (in /bin/bash)
+   n2: 1709 0x155F16: ??? (in /bin/bash)
+    n1: 1645 0x136521: ??? (in /bin/bash)
+     n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+      n1: 1645 0x1958F6: parse_and_execute (in /bin/bash)
+       n1: 1645 0x194ECC: ??? (in /bin/bash)
+        n1: 1645 0x195085: source_file (in /bin/bash)
+         n1: 1645 0x19F457: source_builtin (in /bin/bash)
+          n1: 1645 0x1354CD: ??? (in /bin/bash)
+           n1: 1645 0x1361F7: ??? (in /bin/bash)
+            n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+             n1: 1645 0x1958F6: parse_and_execute (in /bin/bash)
+              n1: 1645 0x194ECC: ??? (in /bin/bash)
+               n1: 1645 0x195085: source_file (in /bin/bash)
+                n1: 1645 0x19F457: source_builtin (in /bin/bash)
+                 n1: 1645 0x1354CD: ??? (in /bin/bash)
+                  n1: 1645 0x1361F7: ??? (in /bin/bash)
+                   n1: 1645 0x14E0D6: execute_command_internal (in /bin/bash)
+                    n1: 1645 0x14FBF0: execute_command (in /bin/bash)
+                     n1: 1645 0x13A272: reader_loop (in /bin/bash)
+                      n0: 1645 0x138C8D: main (in /bin/bash)
+    n0: 64 in 2 places, all below massif's threshold (1.00%)
+ n1: 7464 0x529122F: _nl_intern_locale_data (loadlocale.c:98)
+  n1: 7464 0x5291CE2: _nl_load_locale_from_archive (loadarchive.c:477)
+   n1: 7464 0x5290A92: _nl_find_locale (findlocale.c:153)
+    n1: 7464 0x529027C: setlocale (setlocale.c:340)
+     n1: 7464 0x188B30: set_default_locale (in /bin/bash)
+      n0: 7464 0x137E75: main (in /bin/bash)
+ n2: 4357 0x18F151: xrealloc (in /bin/bash)
+  n0: 3133 in 8 places, all below massif's threshold (1.00%)
+  n2: 1224 0x155F69: ??? (in /bin/bash)
+   n1: 1224 0x136521: ??? (in /bin/bash)
+    n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+     n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+      n1: 1224 0x194ECC: ??? (in /bin/bash)
+       n1: 1224 0x195085: source_file (in /bin/bash)
+        n1: 1224 0x19F457: source_builtin (in /bin/bash)
+         n1: 1224 0x1354CD: ??? (in /bin/bash)
+          n1: 1224 0x1361F7: ??? (in /bin/bash)
+           n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+            n1: 1224 0x1958F6: parse_and_execute (in /bin/bash)
+             n1: 1224 0x194ECC: ??? (in /bin/bash)
+              n1: 1224 0x195085: source_file (in /bin/bash)
+               n1: 1224 0x19F457: source_builtin (in /bin/bash)
+                n1: 1224 0x1354CD: ??? (in /bin/bash)
+                 n1: 1224 0x1361F7: ??? (in /bin/bash)
+                  n1: 1224 0x14E0D6: execute_command_internal (in /bin/bash)
+                   n1: 1224 0x14FBF0: execute_command (in /bin/bash)
+                    n1: 1224 0x13A272: reader_loop (in /bin/bash)
+                     n0: 1224 0x138C8D: main (in /bin/bash)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 2554 0x18F16E: xrealloc (in /bin/bash)
+  n1: 2200 0x176605: ??? (in /bin/bash)
+   n1: 2200 0x176B40: fd_to_buffered_stream (in /bin/bash)
+    n1: 2200 0x17700E: with_input_from_buffered_stream (in /bin/bash)
+     n0: 2200 0x138DB8: main (in /bin/bash)
+  n0: 354 in 10 places, all below massif's threshold (1.00%)
+ n0: 1224 in 10 places, all below massif's threshold (1.00%)
