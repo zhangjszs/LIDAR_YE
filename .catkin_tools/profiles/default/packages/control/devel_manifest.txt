@@ -1,0 +1,6 @@
+control
+/home/kerwin/LIDAR_ye/devel/.private/control/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/control/lib/pkgconfig/control.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/control.pc
+/home/kerwin/LIDAR_ye/devel/.private/control/lib/control/PP_car /home/kerwin/LIDAR_ye/devel/lib/control/PP_car
+/home/kerwin/LIDAR_ye/devel/.private/control/share/control/cmake/controlConfig.cmake /home/kerwin/LIDAR_ye/devel/share/control/cmake/controlConfig.cmake
+/home/kerwin/LIDAR_ye/devel/.private/control/share/control/cmake/controlConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/control/cmake/controlConfig-version.cmake

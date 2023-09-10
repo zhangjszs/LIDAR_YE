@@ -1,0 +1,6 @@
+skidpad_detection
+/home/kerwin/LIDAR_ye/devel/.private/skidpad_detection/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/skidpad_detection/lib/pkgconfig/skidpad_detection.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/skidpad_detection.pc
+/home/kerwin/LIDAR_ye/devel/.private/skidpad_detection/lib/skidpad_detection/skidpad_detection_node /home/kerwin/LIDAR_ye/devel/lib/skidpad_detection/skidpad_detection_node
+/home/kerwin/LIDAR_ye/devel/.private/skidpad_detection/share/skidpad_detection/cmake/skidpad_detectionConfig.cmake /home/kerwin/LIDAR_ye/devel/share/skidpad_detection/cmake/skidpad_detectionConfig.cmake
+/home/kerwin/LIDAR_ye/devel/.private/skidpad_detection/share/skidpad_detection/cmake/skidpad_detectionConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/skidpad_detection/cmake/skidpad_detectionConfig-version.cmake

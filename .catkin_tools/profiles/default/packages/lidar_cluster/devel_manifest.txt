@@ -1,0 +1,8 @@
+lidar_cluster
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/lib/liblidar_cluster.so /home/kerwin/LIDAR_ye/devel/lib/liblidar_cluster.so
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/lib/pkgconfig/lidar_cluster.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/lidar_cluster.pc
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/lib/lidar_cluster/test_conf /home/kerwin/LIDAR_ye/devel/lib/lidar_cluster/test_conf
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/lib/lidar_cluster/lidar_cluster_viewer /home/kerwin/LIDAR_ye/devel/lib/lidar_cluster/lidar_cluster_viewer
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/share/lidar_cluster/cmake/lidar_clusterConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/lidar_cluster/cmake/lidar_clusterConfig-version.cmake
+/home/kerwin/LIDAR_ye/devel/.private/lidar_cluster/share/lidar_cluster/cmake/lidar_clusterConfig.cmake /home/kerwin/LIDAR_ye/devel/share/lidar_cluster/cmake/lidar_clusterConfig.cmake

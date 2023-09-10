@@ -1,0 +1,6 @@
+Local_cone
+/home/kerwin/LIDAR_ye/devel/.private/Local_cone/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/Local_cone/lib/Local_cone/Local_cone /home/kerwin/LIDAR_ye/devel/lib/Local_cone/Local_cone
+/home/kerwin/LIDAR_ye/devel/.private/Local_cone/lib/pkgconfig/Local_cone.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/Local_cone.pc
+/home/kerwin/LIDAR_ye/devel/.private/Local_cone/share/Local_cone/cmake/Local_coneConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/Local_cone/cmake/Local_coneConfig-version.cmake
+/home/kerwin/LIDAR_ye/devel/.private/Local_cone/share/Local_cone/cmake/Local_coneConfig.cmake /home/kerwin/LIDAR_ye/devel/share/Local_cone/cmake/Local_coneConfig.cmake

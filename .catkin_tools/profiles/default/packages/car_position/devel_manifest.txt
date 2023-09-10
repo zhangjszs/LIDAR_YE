@@ -1,0 +1,7 @@
+car_position
+/home/kerwin/LIDAR_ye/devel/.private/car_position/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/car_position/lib/libcar_position_lib.so /home/kerwin/LIDAR_ye/devel/lib/libcar_position_lib.so
+/home/kerwin/LIDAR_ye/devel/.private/car_position/lib/pkgconfig/car_position.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/car_position.pc
+/home/kerwin/LIDAR_ye/devel/.private/car_position/lib/car_position/car_position /home/kerwin/LIDAR_ye/devel/lib/car_position/car_position
+/home/kerwin/LIDAR_ye/devel/.private/car_position/share/car_position/cmake/car_positionConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/car_position/cmake/car_positionConfig-version.cmake
+/home/kerwin/LIDAR_ye/devel/.private/car_position/share/car_position/cmake/car_positionConfig.cmake /home/kerwin/LIDAR_ye/devel/share/car_position/cmake/car_positionConfig.cmake

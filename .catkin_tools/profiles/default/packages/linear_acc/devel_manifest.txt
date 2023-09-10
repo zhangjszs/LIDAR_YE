@@ -1,0 +1,6 @@
+linear_acc
+/home/kerwin/LIDAR_ye/devel/.private/linear_acc/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/linear_acc/lib/liblinear_acc.so /home/kerwin/LIDAR_ye/devel/lib/liblinear_acc.so
+/home/kerwin/LIDAR_ye/devel/.private/linear_acc/lib/pkgconfig/linear_acc.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/linear_acc.pc
+/home/kerwin/LIDAR_ye/devel/.private/linear_acc/share/linear_acc/cmake/linear_accConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/linear_acc/cmake/linear_accConfig-version.cmake
+/home/kerwin/LIDAR_ye/devel/.private/linear_acc/share/linear_acc/cmake/linear_accConfig.cmake /home/kerwin/LIDAR_ye/devel/share/linear_acc/cmake/linear_accConfig.cmake

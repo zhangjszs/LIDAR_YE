@@ -3,6 +3,5 @@ build/
 devel/
 **/*.log
 **/*.stderr
-*.txt
 *.log
 *.log.*

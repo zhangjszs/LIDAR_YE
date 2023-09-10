@@ -1,0 +1,6 @@
+nodelet_test
+/home/kerwin/LIDAR_ye/devel/.private/nodelet_test/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/nodelet_test/lib/libnodelet_test.so /home/kerwin/LIDAR_ye/devel/lib/libnodelet_test.so
+/home/kerwin/LIDAR_ye/devel/.private/nodelet_test/lib/pkgconfig/nodelet_test.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/nodelet_test.pc
+/home/kerwin/LIDAR_ye/devel/.private/nodelet_test/share/nodelet_test/cmake/nodelet_testConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/nodelet_test/cmake/nodelet_testConfig-version.cmake
+/home/kerwin/LIDAR_ye/devel/.private/nodelet_test/share/nodelet_test/cmake/nodelet_testConfig.cmake /home/kerwin/LIDAR_ye/devel/share/nodelet_test/cmake/nodelet_testConfig.cmake

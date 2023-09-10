@@ -1,0 +1,7 @@
+high_speed_tracking
+/home/kerwin/LIDAR_ye/devel/.private/urinay/cmake.lock /home/kerwin/LIDAR_ye/devel/./cmake.lock
+/home/kerwin/LIDAR_ye/devel/.private/urinay/lib/liburinay.so /home/kerwin/LIDAR_ye/devel/lib/liburinay.so
+/home/kerwin/LIDAR_ye/devel/.private/urinay/lib/pkgconfig/urinay.pc /home/kerwin/LIDAR_ye/devel/lib/pkgconfig/urinay.pc
+/home/kerwin/LIDAR_ye/devel/.private/urinay/lib/urinay/urinay_exec /home/kerwin/LIDAR_ye/devel/lib/urinay/urinay_exec
+/home/kerwin/LIDAR_ye/devel/.private/urinay/share/urinay/cmake/urinayConfig-version.cmake /home/kerwin/LIDAR_ye/devel/share/urinay/cmake/urinayConfig-version.cmake
+/home/kerwin/LIDAR_ye/devel/.private/urinay/share/urinay/cmake/urinayConfig.cmake /home/kerwin/LIDAR_ye/devel/share/urinay/cmake/urinayConfig.cmake
