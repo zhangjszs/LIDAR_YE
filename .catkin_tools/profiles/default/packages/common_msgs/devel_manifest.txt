@@ -6,6 +6,7 @@ common_msgs
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/HUAT_map.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/HUAT_map.h
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/new_ASENSING.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/new_ASENSING.h
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/ins_p2.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/ins_p2.h
+/home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/HUAT_ControlCommand.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/HUAT_ControlCommand.h
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/path_data.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/path_data.h
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/Cone.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/Cone.h
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/include/common_msgs/local_planning.h /home/kerwin/LIDAR_ye/devel/include/common_msgs/local_planning.h
@@ -28,6 +29,7 @@ common_msgs
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/__init__.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/__init__.py
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/_path_data.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/_path_data.py
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/_local_planning.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/_local_planning.py
+/home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_ControlCommand.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_ControlCommand.py
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_cone.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_cone.py
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_Carstate.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_Carstate.py
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_Tracklimits.py /home/kerwin/LIDAR_ye/devel/lib/python2.7/dist-packages/common_msgs/msg/_HUAT_Tracklimits.py
@@ -53,6 +55,7 @@ common_msgs
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package_HUAT_map.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package_HUAT_map.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/vehicle_cmd.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/vehicle_cmd.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package_vehicle_cmd.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package_vehicle_cmd.lisp
+/home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/HUAT_ControlCommand.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/HUAT_ControlCommand.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package_local_planning.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package_local_planning.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/HUAT_Carstate.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/HUAT_Carstate.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package_Cone.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package_Cone.lisp
@@ -69,6 +72,7 @@ common_msgs
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package_HUAT_Carstate.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package_HUAT_Carstate.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/path_data.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/path_data.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/ImageRect.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/ImageRect.lisp
+/home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package_HUAT_ControlCommand.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package_HUAT_ControlCommand.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/_package.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/_package.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/local_planning.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/local_planning.lisp
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/common-lisp/ros/common_msgs/msg/ins_p2.lisp /home/kerwin/LIDAR_ye/devel/share/common-lisp/ros/common_msgs/msg/ins_p2.lisp
@@ -90,6 +94,7 @@ common_msgs
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/ins_p2.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/ins_p2.l
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/ImageObjs.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/ImageObjs.l
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/HUAT_cone.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/HUAT_cone.l
+/home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/HUAT_ControlCommand.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/HUAT_ControlCommand.l
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/vehicle_status.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/vehicle_status.l
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/new_ASENSING.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/new_ASENSING.l
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/roseus/ros/common_msgs/msg/vehicle_cmd.l /home/kerwin/LIDAR_ye/devel/share/roseus/ros/common_msgs/msg/vehicle_cmd.l
@@ -104,6 +109,7 @@ common_msgs
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/HUAT_ASENSING.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/HUAT_ASENSING.js
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/logging_msg.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/logging_msg.js
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/local_planning.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/local_planning.js
+/home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/HUAT_ControlCommand.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/HUAT_ControlCommand.js
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/ImageRect.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/ImageRect.js
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/time_and_azimuth.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/time_and_azimuth.js
 /home/kerwin/LIDAR_ye/devel/.private/common_msgs/share/gennodejs/ros/common_msgs/msg/HUAT_Tracklimits.js /home/kerwin/LIDAR_ye/devel/share/gennodejs/ros/common_msgs/msg/HUAT_Tracklimits.js

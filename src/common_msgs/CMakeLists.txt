@@ -21,7 +21,7 @@ add_message_files(  # Tell catkin which custom message files to include
   lane_point.msg
   local_planning.msg
   path_data.msg
-
+  HUAT_ControlCommand.msg
   logging_msg.msg
   vehicle_cmd.msg
   vehicle_status.msg
