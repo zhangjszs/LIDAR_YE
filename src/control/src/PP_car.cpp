@@ -13,6 +13,7 @@
 #include <geometry_msgs/PoseStamped.h>
 #include <nav_msgs/Path.h>
 #include <std_msgs/Bool.h>
+#include <common_msgs/vehicle_cmd.h>
 #include "huat_msgs/HUAT_ASENSING.h"
 #include "huat_msgs/HUAT_CarState.h"
 #include "huat_msgs/HUAT_ControlCommand.h"
@@ -57,7 +58,7 @@ public:
         my_checksum = 100;
 
         // pub_cmd = nh.advertise<huat_msgs::HUAT_ControlCommand>("my_topic", 10);
-        pub_finall_cmd = nh.advertise<huat_msgs::HUAT_VehcileCmd>("finall_cad", 100);
+        pub_finall_cmd = nh.advertise<common_msgs::vehicle_cmd>("vehcileCMDMsg", 10);
         sub = nh.subscribe("/Carstate", 10, &PPControl::posecallback, this);                                  // 回调函数在此只是一个声明，只有遇到ros::spin()或ros::spinOnce()才开始处理被调用的数据
         sub_path = nh.subscribe("/skidpad_detection_node/log_path", 100, &PPControl::locationcallback, this); // 订阅轨迹信息
         // sub_cmd = nh.subscribe("my_topic", 10, &PPControl::anglecallback, this);
@@ -331,7 +332,7 @@ public:
             pub_finall_cmd.publish(finall_cmd);
         }
 
-            if ((goal_idx >= refx.size() - 1) || approachingGoalPub)
+            if ((goal_idx >= refx.size() - 1) && approachingGoalPub)
             {
                 cmd.steering_angle.data = 0;
                 cmd.throttle.data = 0;
